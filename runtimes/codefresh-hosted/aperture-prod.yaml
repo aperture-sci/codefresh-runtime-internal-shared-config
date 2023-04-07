@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    codefresh.io/entity: internal-config
+    codefresh.io/internal: 'true'
+  name: aperture-prod
+spec:
+  destination:
+    namespace: default
+    server: https://35.202.2.217
+  project: default
+  source:
+    directory:
+      include: >-
+        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh-hosted/*.yaml,runtimes/codefresh-hosted/**/*.yaml,codefresh-hosted-managed-cluster-aperture-prod-cm.yaml}
+      recurse: true
+    path: resources
+    repoURL: >-
+      https://github.com/aperture-fresh/codefresh-runtime-internal-shared-config.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - allowEmpty=true
