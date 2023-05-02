@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh-hosted/*.yaml,runtimes/codefresh-hosted/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,codefresh-hosted/codefresh-runtime-applications.yaml,codefresh-hosted/aperture-devops.yaml,codefresh-hosted/aperture-qa-rollouts.yaml,codefresh-hosted/aperture-qa-rollout-reporter.yaml,codefresh-hosted/aperture-staging-rollouts.yaml,codefresh-hosted/aperture-staging-rollout-reporter.yaml,codefresh-hosted/aperture-prod-rollouts.yaml,codefresh-hosted/aperture-prod-rollout-reporter.yaml}
+        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh-hosted/*.yaml,runtimes/codefresh-hosted/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,codefresh-hosted/codefresh-runtime-applications.yaml,codefresh-hosted/aperture-devops.yaml,codefresh-hosted/aperture-qa-rollouts.yaml,codefresh-hosted/aperture-qa-rollout-reporter.yaml,codefresh-hosted/aperture-staging-rollouts.yaml,codefresh-hosted/aperture-staging-rollout-reporter.yaml}
       recurse: true
     path: resources
     repoURL: >-
