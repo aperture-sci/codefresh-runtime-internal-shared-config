@@ -15,7 +15,7 @@ spec:
     targetRevision: main
     directory:
       include: '*'
-      exclude: /apps/**/crossplane/
+      exclude: /apps/crossplane/
       recurse: true
   destination:
     namespace: codefresh-hosted
