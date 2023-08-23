@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: aperture-devops
   labels:
-    codefresh.io/entity: 'git-source'
+    codefresh.io/entity: git-source
     codefresh.io/internal: 'false'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -15,7 +15,7 @@ spec:
     targetRevision: main
     directory:
       include: '*'
-      exclude: ''
+      exclude: /apps/**/crossplane/
       recurse: true
   destination:
     namespace: codefresh-hosted
