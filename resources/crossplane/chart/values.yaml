@@ -8,3 +8,7 @@ gitops-runtime:
           key: token
     runtime:
       name: crossplane
+  argo-cd:
+    configs:
+      cm:
+        application.resourceTrackingMethod: annotation
