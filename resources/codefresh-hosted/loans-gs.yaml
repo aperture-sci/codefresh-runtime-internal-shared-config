@@ -3,14 +3,14 @@ kind: Application
 metadata:
   name: loans-gs
   labels:
-    codefresh.io/entity: 'git-source'
+    codefresh.io/entity: git-source
     codefresh.io/internal: 'false'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: git-sources
   source:
-    repoURL: https://github.com/noam-codefresh/git-source.git
+    repoURL: https://github.com/aperture-sci/promotions-demo.git
     path: loans-gs
     targetRevision: HEAD
     directory:
