@@ -24,8 +24,8 @@ gitops-runtime:
       serviceAccount:
         create: true
         name: workflows-default
-      annotations:
-        eks.amazonaws.com/role-arn: "arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev"          
+        annotations:
+          eks.amazonaws.com/role-arn: "arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev"          
 
   global:
     codefresh:
