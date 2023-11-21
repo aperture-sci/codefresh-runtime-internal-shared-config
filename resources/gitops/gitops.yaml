@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops
+  labels:
+    codefresh.io/entity: runtime
+    codefresh.io/internal: 'true'
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/aperture-fresh/codefresh-runtime-internal-shared-config.git
+    targetRevision: HEAD
+    path: resources/gitops/chart
+    helm:
+      releaseName: gitops
+  destination:
+    namespace: gitops
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true

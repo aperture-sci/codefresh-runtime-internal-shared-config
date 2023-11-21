@@ -1,0 +1,22 @@
+gitops-runtime:
+  argo-workflows:
+    artifactRepository:
+      archiveLogs: true
+      s3:
+        bucket: aperturedevops
+        endpoint: s3.amazonaws.com
+        region: us-east-1
+        roleARN: arn:aws:iam::336151728602:role/codefresh_s3
+  global:
+    codefresh:
+      accountId: 641dfab29939b208915c0d4e
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      ingress:
+        enabled: false
+      name: gitops
+  installer:
+    skipValidation: true
