@@ -1,5 +1,9 @@
 gitops-runtime:
   argo-workflows:
+    controller:
+      workflowDefaults:
+        spec:
+          serviceAccountName: workflows-default
     useDefaultArtifactRepo: true
     useStaticCredentials: false
     artifactRepository:
@@ -12,6 +16,17 @@ gitops-runtime:
           insecure: false
           region: us-east-1
           roleARN: arn:aws:iam::336151728602:role/codefresh_s3
+    server:
+      serviceAccount:
+        annotations:
+          eks.amazonaws.com/role-arn: "arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev"
+    workflow:
+      serviceAccount:
+        serviceAccount:
+          create: true
+          name: workflows-default
+        annotations:
+          eks.amazonaws.com/role-arn: "arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev"          
 
   global:
     codefresh:
