@@ -1,6 +1,7 @@
 gitops-runtime:
   argo-workflows:
     useDefaultArtifactRepo: true
+    useStaticCredentials: false
     artifactRepository:
       archiveLogs: true
       s3:
