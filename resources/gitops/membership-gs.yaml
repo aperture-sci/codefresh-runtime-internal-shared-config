@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: aperture-devops
+  name: membership-gs
   labels:
-    codefresh.io/entity: git-source
+    codefresh.io/entity: 'git-source'
     codefresh.io/internal: 'false'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: git-sources
   source:
-    repoURL: https://github.com/aperture-sci/DevOps.git
-    path: ./apps/.
+    repoURL: https://github.com/aperture-sci/promotions-demo.git
+    path: membership-gs
     targetRevision: main
     directory:
       include: '*'
-      exclude: 'crossplane/*'
+      exclude: ''
       recurse: true
   destination:
     namespace: gitops
