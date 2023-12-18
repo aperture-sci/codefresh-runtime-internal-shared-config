@@ -11,7 +11,7 @@ spec:
   project: git-sources
   source:
     repoURL: https://github.com/aperture-sci/DevOps.git
-    path: ./apps/.
+    path: ./apps
     targetRevision: main
     directory:
       include: '*'
