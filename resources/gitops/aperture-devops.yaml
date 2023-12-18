@@ -15,7 +15,7 @@ spec:
     targetRevision: main
     directory:
       include: '*'
-      exclude: 'crossplane/*'
+      exclude: crossplane/*
       recurse: true
   destination:
     namespace: gitops
