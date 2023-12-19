@@ -11,8 +11,8 @@ spec:
   project: git-sources
   source:
     repoURL: https://github.com/aperture-sci/hosted-applications.git
-    path: apps
-    targetRevision: HEAD
+    path: ./apps
+    targetRevision: main
     directory:
       include: '*'
       exclude: ''
