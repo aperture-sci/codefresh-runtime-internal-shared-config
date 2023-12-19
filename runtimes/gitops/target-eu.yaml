@@ -18,8 +18,7 @@ spec:
         {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/gitops/*.yaml,runtimes/gitops/**/*.yaml,gitops-managed-cluster-target-eu-cm.yaml}
       recurse: true
     path: resources
-    repoURL: >-
-      https://github.com/aperture-fresh/codefresh-runtime-internal-shared-config.git
+    repoURL: https://github.com/aperture-sci/ISC.git
     targetRevision: HEAD
   syncPolicy:
     automated:
