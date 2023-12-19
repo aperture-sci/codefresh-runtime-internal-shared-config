@@ -1,1 +1,2 @@
-# codefresh-runtime-internal-shared-config
+# ISC
+Shared config for GitOps runtimes
