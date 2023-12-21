@@ -1,4 +1,20 @@
 gitops-runtime:
+  argo-cd:
+    eventReporter:
+      enabled: true
+      version: v2
+      replicas: 4
+      image:
+        tag: v2.8-2023.12.13-3973ffbbd
+      env:
+        - name: "USE_GRPC"
+          value: "false"
+    server:
+      replicas: 2
+      resources:
+        requests:
+          cpu: "0.3"
+          memory: "400Mi"
   argo-workflows:
     controller:
       workflowDefaults:
