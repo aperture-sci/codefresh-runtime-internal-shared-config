@@ -11,10 +11,10 @@ spec:
   project: git-sources
   source:
     repoURL: https://github.com/aperture-sci/hosted-git_source.git
-    path: ./resources
-    targetRevision: main
+    path: resources
+    targetRevision: HEAD
     directory:
-      include: ''
+      include: '{*.yaml,**/*.yaml}'
       exclude: ''
       recurse: true
   destination:
