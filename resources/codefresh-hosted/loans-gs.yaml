@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/aperture-sci/promotions-demo.git
     path: loans-gs
-    targetRevision: HEAD
+    targetRevision: main
     directory:
       include: '*'
       exclude: ''
