@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh-hosted/*.yaml,runtimes/codefresh-hosted/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,codefresh-hosted/kc-v-usw-rollouts.yaml,codefresh-hosted/kc-v-usw-rollout-reporter.yaml,codefresh-hosted/target-eu-rollouts.yaml,codefresh-hosted/target-eu-rollout-reporter.yaml,codefresh-hosted/hosted-apps.yaml,codefresh-hosted/kc-v-use-rollouts.yaml,codefresh-hosted/kc-v-use-rollout-reporter.yaml,gitops/accounts-gs.yaml,gitops/loans-gs.yaml,gitops/orders-gs.yaml,gitops/membership-gs.yaml}
+        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh-hosted/*.yaml,runtimes/codefresh-hosted/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,codefresh-hosted/kc-v-usw-rollouts.yaml,codefresh-hosted/kc-v-usw-rollout-reporter.yaml,codefresh-hosted/target-eu-rollouts.yaml,codefresh-hosted/target-eu-rollout-reporter.yaml,codefresh-hosted/hosted-apps.yaml,codefresh-hosted/kc-v-use-rollouts.yaml,codefresh-hosted/kc-v-use-rollout-reporter.yaml,gitops/accounts-gs.yaml,gitops/loans-gs.yaml,gitops/orders-gs.yaml,gitops/membership-gs.yaml,codefresh-hosted/hosted-default.yaml}
       recurse: true
     path: resources
     repoURL: >-
