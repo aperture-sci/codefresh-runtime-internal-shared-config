@@ -18,7 +18,7 @@ spec:
       exclude: ''
       recurse: true
   destination:
-    namespace: codefresh-hosted
+    namespace: gitops
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
