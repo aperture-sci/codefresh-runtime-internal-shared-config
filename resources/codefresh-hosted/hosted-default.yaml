@@ -14,7 +14,7 @@ spec:
     path: ./resources
     targetRevision: main
     directory:
-      include: '{*.yaml,**/*.yaml}'
+      include: ''
       exclude: ''
       recurse: true
   destination:
