@@ -11,10 +11,10 @@ spec:
   project: git-sources
   source:
     repoURL: https://github.com/aperture-sci/promotions-demo.git
-    path: .
+    path: apps
     targetRevision: main
     directory:
-      include: '*'
+      include: ''
       exclude: ''
       recurse: true
   destination:
