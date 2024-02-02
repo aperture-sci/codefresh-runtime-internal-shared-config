@@ -8,16 +8,13 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: git
   source:
-    helm:
-      valueFiles:
-        - values.yaml
-    repoURL: https://github.com/kubescape/kubescape.git
-    path: ./examples/helm_chart
-    targetRevision: master
+    repoURL: https://github.com/aperture-sci/gitops_applications.git
+    path: apps/kubescape
+    targetRevision: HEAD
     directory:
-      include: '**'
+      include: '*'
       exclude: ''
       recurse: true
   destination:
