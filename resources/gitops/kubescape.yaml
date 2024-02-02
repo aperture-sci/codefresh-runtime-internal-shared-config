@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: kubescape
   labels:
-    codefresh.io/entity: 'git-source'
+    codefresh.io/entity: git-source
     codefresh.io/internal: 'false'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/aperture-sci/gitops_applications.git
     path: ./apps/kubescape
-    targetRevision: main
+    targetRevision: master
     directory:
       include: '*'
       exclude: ''
