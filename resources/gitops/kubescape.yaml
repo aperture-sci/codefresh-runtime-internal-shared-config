@@ -8,7 +8,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: git
+  project: default
   source:
     repoURL: https://github.com/aperture-sci/gitops_applications.git
     path: apps/kubescape
