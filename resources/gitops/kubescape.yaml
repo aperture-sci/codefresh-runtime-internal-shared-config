@@ -10,6 +10,9 @@ metadata:
 spec:
   project: default
   source:
+    helm:
+      valueFiles:
+        - values.yaml
     repoURL: https://github.com/kubescape/kubescape.git
     path: ./examples/helm_chart
     targetRevision: master
