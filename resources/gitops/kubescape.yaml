@@ -10,11 +10,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/aperture-sci/gitops_applications.git
-    path: ./apps/kubescape
+    repoURL: https://github.com/kubescape/kubescape.git
+    path: ./examples/helm_chart
     targetRevision: master
     directory:
-      include: '*'
+      include: '**'
       exclude: ''
       recurse: true
   destination:
