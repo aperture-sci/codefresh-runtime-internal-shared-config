@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/aperture-sci/gitops_git-source.git
     path: resources
-    targetRevision: HEAD
+    targetRevision: main
     directory:
       include: '{*.yaml,**/*.yaml}'
       exclude: ''
