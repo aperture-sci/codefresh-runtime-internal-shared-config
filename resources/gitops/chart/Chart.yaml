@@ -5,6 +5,6 @@ name: codefresh-gitops-runtime
 version: 0.5.1-bump-gitops-operator
 dependencies:
   - name: gitops-runtime
-    repository: oci://quay.io/codefresh/dev/gitops-runtime
+    repository: oci://quay.io/codefresh/dev
     version: 0.5.1-bump-gitops-operator
 
