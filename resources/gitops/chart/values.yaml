@@ -1,7 +1,7 @@
 gitops-runtime:
-  app-proxy:
-    image:
-      tag: 1.2696.0
+  # app-proxy:
+  #   image:
+  #     tag: 1.2696.0
   argo-cd:
     eventReporter:
       enabled: true
