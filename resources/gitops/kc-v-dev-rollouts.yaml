@@ -12,7 +12,7 @@ spec:
   source:
     chart: argo-rollouts
     repoURL: https://codefresh-io.github.io/argo-helm
-    targetRevision: 2.22.1-1-cap-sw
+    targetRevision: 2.32.5-4-additional-logs
     helm:
       releaseName: argo-rollouts
   destination:
