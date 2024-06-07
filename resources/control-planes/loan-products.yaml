@@ -16,11 +16,11 @@ spec:
 
 apiVersion: codefresh.io/v1beta1
 kind: Product
-metadata: 
-  name: sequential-accounts
+metadata:
+  name: accounts
 spec:
   promotionFlows:
-    - name:
+    - name: sequential-accounts
       gitTriggerSelectors:
         - key: commitMessage
           operator: In
