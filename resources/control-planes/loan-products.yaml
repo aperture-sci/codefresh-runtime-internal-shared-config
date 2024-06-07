@@ -4,7 +4,7 @@ metadata:
   name: orders
 spec:
   promotionFlows:
-    - name:
+    - name: sequential-orders
       gitTriggerSelectors:
         - key: commitMessage
           operator: In
@@ -16,8 +16,8 @@ spec:
 
 apiVersion: codefresh.io/v1beta1
 kind: Product
-metadata:
-  name: accounts
+metadata: 
+  name: sequential-accounts
 spec:
   promotionFlows:
     - name:
