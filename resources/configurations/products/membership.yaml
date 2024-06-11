@@ -1,0 +1,19 @@
+apiVersion: codefresh.io/v1beta1
+kind: Product
+metadata:
+  name: membership
+spec:
+  promotionFlows:
+    - name: trio-hotfix
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - hotfix
+    - name: trio-flow
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - promote
+  promotionTemplateRef: trio-promotion-config
