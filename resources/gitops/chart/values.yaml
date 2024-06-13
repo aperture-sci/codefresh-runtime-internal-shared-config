@@ -1,7 +1,4 @@
 gitops-runtime:
-  # app-proxy:
-  #   image:
-  #     tag: 1.2791.0
   argo-cd:
     eventReporter:
       enabled: true
@@ -10,14 +7,14 @@ gitops-runtime:
       image:
         tag: v2.8-2023.12.13-3973ffbbd
       env:
-        - name: "USE_GRPC"
-          value: "false"
+        - name: USE_GRPC
+          value: 'false'
     server:
       replicas: 2
       resources:
         requests:
-          cpu: "0.3"
-          memory: "400Mi"
+          cpu: '0.3'
+          memory: 400Mi
   argo-workflows:
     controller:
       workflowDefaults:
@@ -28,24 +25,23 @@ gitops-runtime:
     artifactRepository:
       archiveLogs: true
       s3:
-          accessKeySecret: {}
-          secretKeySecret: {}
-          bucket: aperturedevops
-          endpoint: s3.amazonaws.com
-          insecure: false
-          region: us-east-1
-          roleARN: arn:aws:iam::336151728602:role/codefresh_s3
+        accessKeySecret: {}
+        secretKeySecret: {}
+        bucket: aperturedevops
+        endpoint: s3.amazonaws.com
+        insecure: false
+        region: us-east-1
+        roleARN: arn:aws:iam::336151728602:role/codefresh_s3
     server:
       serviceAccount:
         annotations:
-          eks.amazonaws.com/role-arn: "arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev"
+          eks.amazonaws.com/role-arn: arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev
     workflow:
       serviceAccount:
         create: true
         name: workflows-default
         annotations:
-          eks.amazonaws.com/role-arn: "arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev"          
-
+          eks.amazonaws.com/role-arn: arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
@@ -57,5 +53,6 @@ gitops-runtime:
       ingress:
         enabled: false
       name: gitops
+      isConfigurationRuntime: true
   installer:
     skipValidation: true
