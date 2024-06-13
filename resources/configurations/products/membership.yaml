@@ -3,17 +3,22 @@ kind: Product
 metadata:
   name: membership
 spec:
-  promotionFlows:
-    - name: trio-hotfix
-      gitTriggerSelectors:
-        - key: commitMessage
-          operator: In
-          values:
-            - hotfix
-    - name: trio-flow
-      gitTriggerSelectors:
-        - key: commitMessage
-          operator: In
-          values:
-            - promote
-  promotionTemplateRef: trio-promotion-config
+  # promotionFlows:
+  #   - name: membership-sequential
+  #     gitTriggerSelectors:
+  #       - key: commitMessage
+  #         operator: In
+  #         values:
+  #           - '[promotion-sequential-membership]'
+
+  promotionTemplate:
+    versionSource:
+      file: Chart.yaml
+      jsonPath: $.appVersion
+    promotion:
+      Chart.yaml:
+        jsonPaths:
+        - $.appVersion
+      values.yaml:
+        jsonPaths:
+        - $.loans.image.tag

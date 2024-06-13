@@ -3,32 +3,23 @@ kind: Product
 metadata:
   name: loan
 spec:
-  promotionFlows:
-    - name: trio-flow
-      gitTriggerSelectors:
-        - key: gitRevision
-          operator: In
-          values:
-            - promotion
-            - promote
-        - key: commitMessage
-          operator: In
-          values:
-            - promotion
-            - promote
-    - name: trio-hotfix
-      gitTriggerSelectors:
-        - key: gitRevision
-          operator: In
-          values:
-            - hotfix
+  # promotionFlows:
+  #   - name: sequential-loan
+  #     gitTriggerSelectors:
+  #
+  #       - key: commitMessage
+  #         operator: In
+  #         values:
+  #           - '[promotion-sequential-loan]'
+
   promotionTemplate:
     versionSource:
-      file: version.yaml
-      jsonPath: $.version
+      file: Chart.yaml
+      jsonPath: $.appVersion
     promotion:
-      chart.yaml:
+      Chart.yaml:
         jsonPaths:
-          - $
-      '':
-        jsonPaths: []
+        - $.appVersion
+      values.yaml:
+        jsonPaths:
+        - $.loans.image.tag
