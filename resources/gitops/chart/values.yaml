@@ -1,9 +1,9 @@
 gitops-runtime:
 
-  gitops-operator:
-    image:
-      tag: cr-23913-27ce074
-      pullPolicy: IfNotPresent
+  # gitops-operator:
+  #   image:
+  #     tag: cr-23913-27ce074
+  #     pullPolicy: IfNotPresent
   app-proxy:
     image:
       repository: quay.io/codefresh/cap-app-proxy
