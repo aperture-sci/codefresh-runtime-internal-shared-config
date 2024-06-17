@@ -1,4 +1,10 @@
 gitops-runtime:
+
+  gitops-operator:
+    image:
+      repository: quay.io/codefresh/charts/dev
+      tag: 1.0.24-cr-23913
+      pullPolicy: IfNotPresent
   app-proxy:
     image:
       repository: quay.io/codefresh/cap-app-proxy
