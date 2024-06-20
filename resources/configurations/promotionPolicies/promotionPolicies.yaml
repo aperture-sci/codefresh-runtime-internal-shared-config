@@ -4,7 +4,7 @@ metadata:
   name: membership
 spec:
   policy:
-    postAction: smoketests
+    preAction: smoketests
     action: commit
   priority: -100
   selector:
