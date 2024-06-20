@@ -5,7 +5,7 @@ metadata:
 spec:
   policy:
     postAction: smoketests
-  priority: 100
+  priority: -100
   selector:
     product:
       names:
