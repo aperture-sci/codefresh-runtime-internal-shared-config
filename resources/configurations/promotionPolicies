@@ -1,0 +1,12 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionPolicy
+metadata:
+  name: policy1
+spec:
+  policy:
+    postAction: smoketests
+  priority: 100
+  selector:
+    product:
+      names:
+        - trio-app
