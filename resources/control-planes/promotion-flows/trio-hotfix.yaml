@@ -12,6 +12,5 @@ spec:
       dependsOn:
         - dev
       policy:
-        preAction: smoketests
         postAction: smoketests
         action: commit
