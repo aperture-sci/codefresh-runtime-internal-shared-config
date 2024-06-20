@@ -9,4 +9,4 @@ spec:
   selector:
     product:
       names:
-        - trio-app
+        - membership
