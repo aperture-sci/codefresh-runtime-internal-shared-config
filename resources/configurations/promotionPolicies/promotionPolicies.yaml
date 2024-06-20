@@ -1,7 +1,7 @@
 apiVersion: codefresh.io/v1beta1
 kind: PromotionPolicy
 metadata:
-  name: policy1
+  name: membership
 spec:
   policy:
     postAction: smoketests
