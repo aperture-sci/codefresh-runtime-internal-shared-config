@@ -1,0 +1,17 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionFlow
+metadata:
+  name: trio-hotfix
+  annotations:
+    version: 0.0.3
+    description: hotfix from Dev to Prod
+spec:
+  triggerEnvironment: dev
+  steps:
+    - environment: production
+      dependsOn:
+        - dev
+      policy:
+        preAction: smoketests
+        postAction: smoketests
+        action: commit
