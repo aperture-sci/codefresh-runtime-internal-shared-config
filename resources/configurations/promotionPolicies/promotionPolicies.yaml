@@ -5,7 +5,7 @@ metadata:
 spec:
   policy:
     postAction: smoketests
-    action: pr
+    action: commit
   priority: -100
   selector:
     product:
