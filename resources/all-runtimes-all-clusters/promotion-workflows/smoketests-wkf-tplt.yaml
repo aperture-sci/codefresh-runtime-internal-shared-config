@@ -1,5 +1,4 @@
 # This Workflow Template is used to simulate smoke test run during a promotion
-
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
@@ -7,6 +6,7 @@ metadata:
   annotations:
     version: 0.0.1
     codefresh.io/workflow-origin: promotion
+    description: smoke test simulation
 spec:
   # arguments:
   #   parameters:
