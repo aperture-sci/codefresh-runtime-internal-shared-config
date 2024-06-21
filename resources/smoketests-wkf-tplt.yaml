@@ -1,5 +1,5 @@
 # This Workflow Template is used to simulate smoke test run during a promotion
-# adding comment to see where it will be saved
+
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
