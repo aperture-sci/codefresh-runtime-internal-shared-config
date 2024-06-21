@@ -1,12 +1,9 @@
-#
-# Adding comment
-#
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
   name: post-action
   annotations:
-      codefresh.io/workflow-origin: promotion
+    codefresh.io/workflow-origin: promotion
 
 spec:
   serviceAccountName: promotion-template
@@ -31,5 +28,3 @@ spec:
   #     - sh
   #     source: |
   #       echo "synced app {{ workflow.parameters.APP_NAME }}"
-        
-        
