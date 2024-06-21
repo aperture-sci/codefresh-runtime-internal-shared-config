@@ -1,6 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
+  codefresh.io/workflow-origin: promotion
   name: pre-action-failed
 spec:
   serviceAccountName: promotion-template
@@ -16,5 +17,3 @@ spec:
       - sh
       source: |
         echo "synced app {{ workflow.parameters.APP_NAME }}"
-        
-        
