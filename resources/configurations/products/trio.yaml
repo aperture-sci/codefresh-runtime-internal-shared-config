@@ -18,8 +18,8 @@ spec:
             - hotfix
   promotionTemplate:
     versionSource:
-      file: version.yaml
-      jsonPath: $.version
+      file: Chart.yaml
+      jsonPath: $.appVersion
     promotion:
       version.yaml:
         jsonPaths:
