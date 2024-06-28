@@ -7,7 +7,7 @@ spec:
   promotionTemplate:
     versionSource:
       file: kustomization.yaml
-      jsonPath: $.images[0].newTag
+      jsonPath: $.images[?(@.name == "docker.io/aperturesci/rollouts-demo")].newTag
     promotion:
       kustomization.yaml:
         jsonPaths:
