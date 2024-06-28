@@ -9,6 +9,6 @@ spec:
       file: kustomization.yaml
       jsonPath: $.images[0].newTag
     promotion:
-      rollout.yaml:
+      kustomization.yaml:
         jsonPaths:
         - $.images[0].newTag
