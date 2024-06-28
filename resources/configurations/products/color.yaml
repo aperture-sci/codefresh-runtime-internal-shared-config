@@ -7,8 +7,8 @@ spec:
   promotionTemplate:
     versionSource:
       file: rollout.yaml
-      jsonPath: $.spec.template.spec.container[0].image
+      jsonPath: $.spec.template.spec.containers[0].image
     promotion:
       rollout.yaml:
         jsonPaths:
-        - $.spec.template.spec.container[0].image
+        - $.spec.template.spec.containers[0].image
