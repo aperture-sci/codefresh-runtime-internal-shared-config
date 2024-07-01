@@ -9,7 +9,7 @@ spec:
         - key: commitMessage
           operator: In
           values:
-            - '[promotion:trio-flow]*'
+            - promotion:trio-flow
     - name: trio-hotfix
       gitTriggerSelectors:
         - key: gitRevision
