@@ -9,7 +9,7 @@ spec:
         - key: commitMessage
           operator: In
           values:
-            - '[promotion:trio-flow]'
+            - '[promotion:trio-flow]*'
     - name: trio-hotfix
       gitTriggerSelectors:
         - key: gitRevision
@@ -23,12 +23,12 @@ spec:
     promotion:
       version.yaml:
         jsonPaths:
-        - $.version
+          - $.version
       Chart.yaml:
         jsonPaths:
-        - $.appVersion
+          - $.appVersion
       values.yaml:
         jsonPaths:
-        - $.buslog.image.tag
-        - $.ctrlr.image.tag
-        - $.flask-ui.image.tag
+          - $.buslog.image.tag
+          - $.ctrlr.image.tag
+          - $.flask-ui.image.tag
