@@ -4,11 +4,11 @@ gitops-runtime:
   #   image:
   #     tag: cr-23913-27ce074
   #     pullPolicy: IfNotPresent
-  app-proxy:
-    image:
-      repository: quay.io/codefresh/cap-app-proxy
-      tag: 1.2841.0
-      pullPolicy: IfNotPresent
+  #app-proxy:
+  #  image:
+  #    repository: quay.io/codefresh/cap-app-proxy
+  #    tag: 1.2841.0
+  #    pullPolicy: IfNotPresent
   argo-cd:
     eventReporter:
       enabled: true
