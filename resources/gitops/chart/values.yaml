@@ -67,4 +67,4 @@ gitops-runtime:
   installer:
     skipValidation: true
   garage-workflows-artifact-storage:
-    enabled: true
+    enabled: false
