@@ -12,15 +12,17 @@ spec:
         - dev
       policy:
         action: commit
-        pre-action: eti-new
+        preAction: eti-new
     - environment: staging
       dependsOn:
         - dev
       policy:
         action: commit
+        preAction: eti-new
     - environment: production
       dependsOn:
         - qa
         - staging
       policy:
         action: commit
+        preAction: eti-new
