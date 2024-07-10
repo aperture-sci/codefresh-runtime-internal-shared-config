@@ -5,8 +5,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: idan-test
+  name: idan-test2
   annotations:
+    codefresh.io/workflow-origin: promotion
     version: 0.0.1
     argo-hub/version: 0.0.1
     argo-hub/description: >-
