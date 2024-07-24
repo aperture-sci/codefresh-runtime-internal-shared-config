@@ -3,14 +3,14 @@ kind: Product
 metadata:
   name: loan
 spec:
-  # promotionFlows:
-  #   - name: sequential-loan
-  #     gitTriggerSelectors:
-  #
-  #       - key: commitMessage
-  #         operator: In
-  #         values:
-  #           - '[promotion-sequential-loan]'
+  promotionFlows:
+    - name: sequential-loan
+      gitTriggerSelectors:
+
+        - key: commitMessage
+          operator: In
+          values:
+            - '[promotion-sequential-loan]'
 
   promotionTemplate:
     versionSource:
