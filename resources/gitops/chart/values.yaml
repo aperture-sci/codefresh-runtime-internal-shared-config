@@ -1,14 +1,24 @@
 gitops-runtime:
+  gitops-operator:
+    argoCdNotifications:
+      resources:
+        limits:
+          cpu: 500m
+          memory: 128Mi
+        requests:
+          cpu: 100m
+          memory: 64Mi
 
-  # gitops-operator:
   #   image:
   #     tag: cr-23913-27ce074
   #     pullPolicy: IfNotPresent
+
   #app-proxy:
   #  image:
   #    repository: quay.io/codefresh/cap-app-proxy
   #    tag: 1.2841.0
   #    pullPolicy: IfNotPresent
+
   argo-cd:
     eventReporter:
       enabled: true
@@ -25,6 +35,7 @@ gitops-runtime:
         requests:
           cpu: '0.3'
           memory: 400Mi
+
   argo-workflows:
     controller:
       workflowDefaults:
@@ -52,6 +63,7 @@ gitops-runtime:
         name: workflows-default
         annotations:
           eks.amazonaws.com/role-arn: arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev
+
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
@@ -64,7 +76,9 @@ gitops-runtime:
         enabled: false
       name: gitops
       isConfigurationRuntime: true
+
   installer:
     skipValidation: true
+
   garage-workflows-artifact-storage:
     enabled: false
