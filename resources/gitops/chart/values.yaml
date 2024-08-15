@@ -1,13 +1,13 @@
 gitops-runtime:
-  gitops-operator:
-    argoCdNotifications:
-      resources:
-        limits:
-          cpu: 500m
-          memory: 128Mi
-        requests:
-          cpu: 100m
-          memory: 64Mi
+  # gitops-operator:
+    # argoCdNotifications:
+    #   resources:
+    #     limits:
+    #       cpu: 500m
+    #       memory: 128Mi
+    #     requests:
+    #       cpu: 100m
+    #       memory: 64Mi
 
   #   image:
   #     tag: cr-23913-27ce074
