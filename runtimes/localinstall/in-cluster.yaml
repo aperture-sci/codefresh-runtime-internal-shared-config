@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,localinstall/cf-gitops-runtime.yaml,runtimes/localinstall/**/*.yaml,runtimes/localinstall/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,localinstall/cf-gitops-runtime.yaml,localinstall/fresh-install.yaml,runtimes/localinstall/**/*.yaml,runtimes/localinstall/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
