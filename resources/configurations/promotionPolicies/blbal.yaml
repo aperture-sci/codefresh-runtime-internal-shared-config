@@ -14,4 +14,3 @@ spec:
   policy:
     action: commit
     preAction: pre-action
-    postAction: post-action
