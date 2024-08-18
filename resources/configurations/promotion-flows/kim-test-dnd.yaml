@@ -1,0 +1,14 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionFlow
+metadata:
+  name: kim-test-dnd
+  annotations:
+    description: ""
+spec:
+  triggerEnvironment: qa
+  steps:
+    - environment: staging
+      dependsOn:
+        - qa
+      policy:
+        preAction: pre-action
