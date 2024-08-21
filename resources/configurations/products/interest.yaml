@@ -3,7 +3,6 @@ kind: Product
 metadata:
   name: interest
 spec:
-
   promotionTemplate:
     versionSource:
       file: Chart.yaml
@@ -11,7 +10,7 @@ spec:
     promotion:
       Chart.yaml:
         jsonPaths:
-        - $.appVersion
+          - $.appVersion
       values.yaml:
         jsonPaths:
-        - $.loans.image.tag
+          - $.loans.image.tag
