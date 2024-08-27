@@ -10,3 +10,9 @@ spec:
     - environment: production
       dependsOn:
         - dev
+    - environment: staging
+      dependsOn:
+        - production
+    - environment: qa
+      dependsOn:
+        - production
