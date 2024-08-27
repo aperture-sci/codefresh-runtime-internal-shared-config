@@ -9,4 +9,5 @@ spec:
       types:
         - PROD
   policy:
+    action: pr
     postAction: kim-test
