@@ -10,11 +10,6 @@ spec:
     - environment: qa
       dependsOn:
         - dev
-      policy:
-        action: pr
     - environment: production
-      dependsOn:
-        - qa
-    - environment: staging
       dependsOn:
         - qa
