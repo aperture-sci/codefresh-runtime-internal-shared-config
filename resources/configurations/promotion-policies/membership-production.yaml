@@ -1,0 +1,12 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionPolicy
+metadata:
+  name: membership-production
+spec:
+  priority: -200
+  selector:
+    targetEnvironment:
+      types:
+        - PROD
+  policy:
+    postAction: kim-test
