@@ -1,7 +1,7 @@
 apiVersion: codefresh.io/v1beta1
-kind: PromotionFlow2
+kind: PromotionFlow
 metadata:
-  name: idan-test-flow
+  name1: idan-test-flow
   annotations:
     description: ""
 spec:
