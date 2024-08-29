@@ -6,7 +6,7 @@ metadata:
     description: ""
 spec:
   triggerEnvironment: dev
-  steps1:
+  steps:
     - environment: production
       dependsOn:
         - dev
