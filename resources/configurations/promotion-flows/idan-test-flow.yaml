@@ -1,12 +1,12 @@
 apiVersion: codefresh.io/v1beta1
 kind: PromotionFlow
 metadata:
-  #name: idan-test-flow
+  name: idan-test-flow
   annotations:
     description: ""
 spec:
   triggerEnvironment: dev
-  steps:
+  steps1:
     - environment: production
       dependsOn:
         - dev
