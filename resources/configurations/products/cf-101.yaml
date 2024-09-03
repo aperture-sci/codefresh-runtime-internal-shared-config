@@ -10,6 +10,12 @@ spec:
           operator: In
           values:
             - '*promote*'
+    - name: cf-101-flow
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - promote
   promotionTemplate:
     versionSource:
       file: version.yaml
