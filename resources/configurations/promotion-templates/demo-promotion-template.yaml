@@ -1,7 +1,7 @@
 apiVersion: codefresh.io/v1beta1
 kind: PromotionTemplate
 metadata:
-  name: promotion-template
+  name: promotion-template-example
 spec:
   applicationSourceSelector:
     matchExpressions:
