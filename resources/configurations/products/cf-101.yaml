@@ -3,6 +3,19 @@ kind: Product
 metadata:
   name: cf-101
 spec:
+  promotionFlows:
+    - name: cf-101-flow
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - promote
+    - name: trio-hotfix
+      gitTriggerSelectors:
+        - key: gitRevision
+          operator: In
+          values:
+            - hotfix
   promotionTemplate:
     versionSource:
       file: version.yaml
