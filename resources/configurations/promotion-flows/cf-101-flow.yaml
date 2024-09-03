@@ -14,6 +14,7 @@ spec:
         action: commit
     - environment: production
       dependsOn:
-        - dev
+        - qa
       policy:
         action: commit
+        preAction: smoketests
