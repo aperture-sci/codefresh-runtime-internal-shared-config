@@ -17,4 +17,3 @@ spec:
         - qa
       policy:
         action: commit
-        preAction: smoketests
