@@ -12,6 +12,7 @@ spec:
         - dev
       policy:
         action: commit
+        postAction: smoketests
     - environment: production
       dependsOn:
         - dev
