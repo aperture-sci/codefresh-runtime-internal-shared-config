@@ -1,0 +1,13 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionPolicy
+metadata:
+  name: cf-101-2
+spec:
+  priority: 1
+  selector:
+    targetEnvironment:
+      types:
+        - PROD
+  policy:
+    action: pr
+    preAction: smoketests
