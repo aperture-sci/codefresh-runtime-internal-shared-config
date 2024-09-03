@@ -9,7 +9,7 @@ spec:
         - key: commitMessage
           operator: In
           values:
-            - promote
+            - '*promote*'
   promotionTemplate:
     versionSource:
       file: version.yaml
