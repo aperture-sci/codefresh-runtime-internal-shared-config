@@ -5,6 +5,9 @@ metadata:
 spec:
   priority: -200
   selector:
+    product:
+      names:
+        - membership
     targetEnvironment:
       types:
         - PROD
