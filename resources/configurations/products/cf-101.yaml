@@ -17,4 +17,4 @@ spec:
     promotion:
       values.yaml:
         jsonPaths:
-          - $.*.images
+          - $.*.image
