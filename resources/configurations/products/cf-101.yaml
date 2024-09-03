@@ -16,6 +16,12 @@ spec:
           operator: In
           values:
             - promote
+    - name: cf-101-flow
+      gitTriggerSelectors:
+        - key: gitRevision
+          operator: In
+          values:
+            - main
   promotionTemplate:
     versionSource:
       file: version.yaml
