@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,gitops/aperture-devops.yaml,gitops/argo-hub.yaml,gitops/default.yaml,gitops/demo-quick-start-apps.yaml,gitops/gitops-apps.yaml,gitops/gitops.yaml,gitops/kc-v-dev-rollout-reporter.yaml,gitops/kc-v-dev-rollouts.yaml,gitops/kc-v-prod-rollout-reporter.yaml,gitops/kc-v-prod-rollouts.yaml,gitops/kc-v-qa-rollout-reporter.yaml,gitops/kc-v-qa-rollouts.yaml,gitops/kc-v-staging-rollout-reporter.yaml,gitops/kc-v-staging-rollouts.yaml,gitops/octopub.yaml,gitops/promotion-flow-demo-template.yaml,gitops/promotion.yaml,gitops/target-asia-rollout-reporter.yaml,gitops/target-asia-rollouts.yaml,runtimes/gitops/**/*.yaml,runtimes/gitops/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,gitops/aperture-devops.yaml,gitops/argo-hub.yaml,gitops/default.yaml,gitops/demo-quick-start-apps.yaml,gitops/gitops-apps.yaml,gitops/gitops.yaml,gitops/kc-v-dev-rollout-reporter.yaml,gitops/kc-v-dev-rollouts.yaml,gitops/kc-v-prod-rollout-reporter.yaml,gitops/kc-v-prod-rollouts.yaml,gitops/kc-v-qa-rollout-reporter.yaml,gitops/kc-v-qa-rollouts.yaml,gitops/kc-v-staging-rollout-reporter.yaml,gitops/kc-v-staging-rollouts.yaml,gitops/promotion-flow-demo-template.yaml,gitops/promotion.yaml,gitops/target-asia-rollout-reporter.yaml,gitops/target-asia-rollouts.yaml,runtimes/gitops/**/*.yaml,runtimes/gitops/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
