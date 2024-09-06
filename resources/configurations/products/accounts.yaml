@@ -10,4 +10,15 @@ spec:
           operator: In
           values:
             - '[promotion:sequential-accounts]'
-  promotionTemplateRef: promotion-config-accounts
+#  promotionTemplateRef: promotion-config-accounts
+  promotionTemplate:
+    versionSource:
+      file: Chart.yaml
+      jsonPath: $.appVersion
+    promotion:
+      Chart.yaml:
+        jsonPaths:
+          - $.appVersion
+      values.yaml:
+        jsonPaths:
+          - $.loans.image.tag
