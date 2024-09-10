@@ -1,7 +1,7 @@
 apiVersion: codefresh.io/v1beta1
 kind: PromotionPolicy
 metadata:
-  name: non-prod-default-preaction
+  name: non-prod-default
 spec:
   priority: 10
   selector:
@@ -9,4 +9,5 @@ spec:
       types:
         - NON_PROD
   policy:
+    action: commit
     preAction: pre-action
