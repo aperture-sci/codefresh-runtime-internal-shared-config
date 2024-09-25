@@ -9,4 +9,4 @@ spec:
       names:
         - membership
   policy:
-    action: pr
+    action: commit
