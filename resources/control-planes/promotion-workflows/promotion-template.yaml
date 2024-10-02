@@ -17,6 +17,7 @@ spec:
           value: argocd-token
         - name: TOKEN_SECRET_KEY
           value: token
+  onExit: slack-alert
   entrypoint: promotion
   arguments:
     parameters:
@@ -38,6 +39,26 @@ spec:
     - name: LABELS
       value: ""
   templates:
+  #
+  # Send message on slack when promotion fails
+  - slack-alert:
+    dag:
+      tasks:
+      - name: send-message
+        templateRef:
+          name: argo-hub.slack.0.0.2
+          template: post-to-channel
+        when: "{{workflow.status}} != Succeeded"
+        arguments:
+          parameters:
+          - name: SLACK_CHANNEL
+            value: 'topic-codefresh-demo'
+          - name: SLACK_MESSAGE
+            value: 'Promotion has failed for application {{ workflow.parameters.APP_NAME }}'
+          - name: SLACK_TOKEN
+            value: slack-token
+          - name: LOG_LEVEL
+            value: "info"
   - name: promotion
     inputs:
       parameters:
