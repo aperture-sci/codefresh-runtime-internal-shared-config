@@ -8,9 +8,9 @@ data:
   trigger.outofsync: |
     - description: Application color is out of sync.
       when: app.name == "color-dev" and app.status.sync.status == "OutOfSync" and app.status.operationState.phase in ['Succeeded']
-      oncePer: app.status.operationstate.operatzon.sync.changeRevision
+      oncePer: app.status.operationState.operation.sync.changeRevision
       send:
-      -outofsync
+      - outofsync
   template.outofsync: |
     message: |
       Application {{.app.metadata.name}} sync is {{.app.status.sync.status}}.
