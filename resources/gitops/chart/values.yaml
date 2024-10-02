@@ -20,6 +20,10 @@ gitops-runtime:
   #    pullPolicy: IfNotPresent
 
   argo-cd:
+    notifications:
+      enabled: true
+      bots:
+        slack: {}
     eventReporter:
       # enabled: true
       # version: v2
