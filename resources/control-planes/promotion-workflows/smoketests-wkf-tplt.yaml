@@ -8,17 +8,33 @@ metadata:
     codefresh.io/workflow-origin: promotion
     description: smoke test simulation
 spec:
-  # arguments:
-  #   parameters:
-  #   - name: NB_TESTS
-  #     value: 100
-  #   - name: THRESHOLD
-  #     value: 85
-  #   - name: TEST_RATE
-  #     value: 15
-
+  arguments:
+    parameters:
+    - name: APP_NAME
+  onExit: slack-alert
   entrypoint: smoke
   templates:
+    #
+    # Send message on slack when promotion fails
+    - slack-alert:
+      dag:
+        tasks:
+        - name: send-message
+          templateRef:
+            name: argo-hub.slack.0.0.2
+            template: post-to-channel
+          when: "{{workflow.status}} != Succeeded"
+          arguments:
+            parameters:
+            - name: SLACK_CHANNEL
+              value: 'topic-codefresh-demo'
+            - name: SLACK_MESSAGE
+              value: 'Smoketest has failed for application {{ workflow.parameters.APP_NAME }}'
+            - name: SLACK_TOKEN
+              value: slack-token
+            - name: LOG_LEVEL
+              value: "info"
+
     - name: smoke
       inputs:
         parameters:
