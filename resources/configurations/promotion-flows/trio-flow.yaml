@@ -9,6 +9,13 @@ spec:
   triggerEnvironment: dev
   postTrigger: post-action
   steps:
+    - environment: qa
+      dependsOn:
+        - dev
+      policy:
+        preAction: pre-action
+        postAction: smoketests
+        action: commit
     - environment: staging
       dependsOn:
         - dev
@@ -19,11 +26,8 @@ spec:
     - environment: production
       dependsOn:
         - staging
-        - early-adopters
+        - qa
       policy:
         preAction: pre-action
         postAction: post-action
         action: commit
-    - environment: early-adopters
-      dependsOn:
-        - dev
