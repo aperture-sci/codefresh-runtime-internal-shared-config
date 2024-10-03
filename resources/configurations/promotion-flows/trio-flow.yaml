@@ -19,11 +19,7 @@ spec:
     - environment: production
       dependsOn:
         - staging
-        - early-adopters
       policy:
         preAction: pre-action
         postAction: post-action
         action: commit
-    - environment: early-adopters
-      dependsOn:
-        - dev
