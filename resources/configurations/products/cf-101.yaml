@@ -9,7 +9,8 @@ spec:
         - key: commitMessage
           operator: In
           values:
-            - promote
+            - promote-101
+            - '*promote-101*'
     - name: trio-hotfix
       gitTriggerSelectors:
         - key: gitRevision
