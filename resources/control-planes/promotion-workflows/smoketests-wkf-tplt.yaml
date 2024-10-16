@@ -16,7 +16,7 @@ spec:
   templates:
     #
     # Send message on slack when promotion fails
-    - slack-alert:
+    - name: slack-alert
       dag:
         tasks:
         - name: send-message
