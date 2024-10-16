@@ -29,7 +29,7 @@ spec:
             - name: SLACK_CHANNEL
               value: 'topic-codefresh-demo'
             - name: SLACK_MESSAGE
-              value: 'Smoketest has failed for application {{ workflow.parameters.APP_NAME }}'
+              value: 'Smoketest has failed for application {{ workflow.parameters.APP_NAME }}. Check https://g.codefresh.io/2.0/workflows/{{ workflow.name }}'
             - name: SLACK_TOKEN
               value: slack-token
             - name: LOG_LEVEL
