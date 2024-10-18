@@ -20,6 +20,8 @@ gitops-runtime:
   #    pullPolicy: IfNotPresent
 
   argo-cd:
+    acrController:
+      enabled: true
     notifications:
       enabled: true
       # bots:
