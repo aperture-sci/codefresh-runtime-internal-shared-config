@@ -47,7 +47,9 @@ spec:
                 "justification": "My app is awesome! Please deploy ASAP",
                 "cmdb_ci":"tomcat", "assignment_group":"a715cd759f2002002920bde8132e7018"
                 }
-
+        - name: wait
+          template: approve
+          depends: create-sn-cr
   - name: echo-pre-action
     script:
       image: alpine
