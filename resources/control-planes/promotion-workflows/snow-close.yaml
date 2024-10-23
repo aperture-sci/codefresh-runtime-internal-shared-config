@@ -22,6 +22,10 @@ spec:
     - name: parameters
   templates:
   - name: snow-close
+    inputs:
+      parameters:
+      - name: APP_NAME
+      - name: parameters
     dag:
       tasks:
         - name: echo
