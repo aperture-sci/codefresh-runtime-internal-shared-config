@@ -51,7 +51,7 @@ spec:
             - name: CR_CLOSE_CODE
               value: "successful"
             - name: CR_CLOSE_NOTES
-              value: "Closed automatically by Argo-Hub ServiceNow workflow template"
+              value: "App {{ workflow.parameters.APP_NAME }} installed with success so we close the Change Request."
 
   # Additional templates
   - name: echo-tmpl
