@@ -9,6 +9,7 @@ metadata:
   name: service-now-close
   annotations:
     codefresh.io/workflow-origin: promotion
+    codefresh.io/promotion-stage: post-action
     version: 0.0.1
     description: 'promotion workflow template'
 
