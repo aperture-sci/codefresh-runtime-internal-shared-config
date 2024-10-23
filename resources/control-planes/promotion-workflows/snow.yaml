@@ -50,6 +50,10 @@ spec:
         - name: wait
           template: approve
           depends: create-sn-cr
+  # Additional templates
+  - name: approve
+    suspend: {}
+
   - name: echo-pre-action
     script:
       image: alpine
