@@ -7,6 +7,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
   name: service-now-close
+  annotations:
+    codefresh.io/workflow-origin: promotion
+    version: 0.0.1
+    description: 'promotion workflow template'
+
 spec:
   serviceAccountName: promotion-template
   entrypoint: snow-close
