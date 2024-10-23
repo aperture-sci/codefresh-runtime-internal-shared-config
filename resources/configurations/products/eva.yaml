@@ -1,0 +1,23 @@
+apiVersion: codefresh.io/v1beta1
+kind: Product
+metadata:
+  name: example-voting-app
+spec:
+  promotionFlows:
+    - name: eva-flow
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - promotion:eva-flow
+            - '*promotion:eva-flow*'
+  promotionTemplate:
+    # versionSource:
+    #   file: values.yaml
+    #   jsonPath: $.appVersion
+    promotion:
+      values.yaml:
+        jsonPaths:
+          - $.vote.image.tag
+          - $.worker.image.tag
+          - $.result.image.tag
