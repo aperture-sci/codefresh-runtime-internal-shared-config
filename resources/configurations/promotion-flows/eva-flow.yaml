@@ -13,8 +13,8 @@ spec:
       dependsOn:
         - dev
       policy:
-        preAction: service-now
-        postAction: smoketests
+        preAction: service-now-open
+        postAction: service-now-close
         action: commit
     # - environment: staging
     #   dependsOn:

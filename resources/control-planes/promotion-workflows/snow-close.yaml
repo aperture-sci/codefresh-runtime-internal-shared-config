@@ -1,0 +1,63 @@
+# DO NOT REMOVE the following attributes:
+# annotations.codefresh.io/workflow-origin (identifies type of Workflow Template as Promotion Workflow)
+# annotations.version (identifies version of Promotion Workflow used)
+# annotations.description (identifies intended use of the Promotion Workflow)
+
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: service-now-close
+spec:
+  serviceAccountName: promotion-template
+  entrypoint: snow-close
+  arguments:
+    parameters:
+    - name: APP_NAME
+    - name: parameters
+  templates:
+  - name: snow-close
+    dag:
+      tasks:
+        - name: echo
+          template: echo-tmpl
+          arguments:
+            parameters:
+            - name: parameters
+              value: "{{ inputs.parameters.parameters }}"
+
+        - name: close-sn-cr
+          depends: echo
+          templateRef:
+            name: argo-hub.servicenow.1.3.0
+            template: closecr
+          arguments:
+            parameters:
+            - name: SN_INSTANCE
+              value: "https://dev201662.service-now.com"
+            - name: SN_AUTH
+              value: "sn-auth"
+            - name: CR_DATA
+              value: '{"work_notes":"this is a message for the work notes"}'
+            - name: CR_SYSID
+              value: "xxxx"
+            - name: LOG_LEVEL
+              value: info
+            - name: CR_CLOSE_CODE
+              value: "successful"
+            - name: CR_CLOSE_NOTES
+              value: "Closed automatically by Argo-Hub ServiceNow workflow template"
+
+  # Additional templates
+  - name: echo-tmpl
+    inputs:
+      parameters:
+      - name: parameters
+    script:
+      image: quay.io/codefresh/curl-base:8.9.1 # because it contains jq
+      env:
+      - name: parameters
+        value: "{{ inputs.parameters.parameters }}"
+      command:
+      - sh
+      source: |
+        echo ${parameters}
