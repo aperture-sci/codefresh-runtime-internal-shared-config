@@ -9,8 +9,7 @@ spec:
         - key: commitMessage
           operator: In
           values:
-            - promotion:eva-flow
-            - '*promotion:eva-flow*'
+            - '[promotion:eva-flow]*'
   promotionTemplate:
     # versionSource:
     #   file: values.yaml
