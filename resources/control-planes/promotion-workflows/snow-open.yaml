@@ -46,7 +46,7 @@ spec:
             - name: CF_RUNTIME
               value: gitops
             - name: SN_INSTANCE
-              value: "https://dev201662.service-now.com"
+              value: "https://dev205910.service-now.com"
             - name: SN_AUTH
               value: "sn-auth"
             - name: LOG_LEVEL
