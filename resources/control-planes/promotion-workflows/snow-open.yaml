@@ -58,6 +58,13 @@ spec:
                 "justification": "My app is awesome! Please deploy ASAP",
                 "cmdb_ci":"tomcat", "assignment_group":"a715cd759f2002002920bde8132e7018"
                 }
+          outputs:
+            parameters:
+            - name: CR_SYSID
+              globalName: JIRA_ISSUE_ID
+              valueFrom:
+                expression: "tasks[createcr].outputs.parameters['CR_SYSID']"
+
 
         - name: wait
           template: approve
