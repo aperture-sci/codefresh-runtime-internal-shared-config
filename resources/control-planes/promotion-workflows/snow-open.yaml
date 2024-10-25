@@ -17,9 +17,9 @@ spec:
   arguments:
     parameters:
     - name: APP_NAME
-  entrypoint: snow-open
+  entrypoint: main
   templates:
-  - name: snow-open
+  - name: main
     outputs:
       parameters:
       - name: CR_SYSID
