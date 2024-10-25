@@ -77,4 +77,7 @@ spec:
       command:
       - sh
       source: |
-        echo ${parameters} > /tmp/sysid.txt
+        echo ${parameters}
+        export SYSID=$(echo ${parameters} | jq -r '.[0].value')
+        echo "got SYSID \"${SYSID}\""
+        echo $SYSID > /tmp/sysid.txt
