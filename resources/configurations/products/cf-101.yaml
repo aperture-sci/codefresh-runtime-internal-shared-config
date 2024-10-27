@@ -25,6 +25,3 @@ spec:
       values.yaml:
         jsonPaths:
           - $.*.image
-      version.yaml:
-        jsonPaths:
-          - $.version
