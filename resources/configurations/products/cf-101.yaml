@@ -21,3 +21,10 @@ spec:
     versionSource:
       file: version.yaml
       jsonPath: $.version
+    promotion:
+      values.yaml:
+        jsonPaths:
+          - $.*.image
+      version.yaml:
+        jsonPaths:
+          - $.version
