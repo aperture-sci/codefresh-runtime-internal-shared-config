@@ -12,6 +12,7 @@ spec:
         - dev
       policy:
         postAction: smoketests
+        action: commit
     - environment: pro-asia
       dependsOn:
         - qa
