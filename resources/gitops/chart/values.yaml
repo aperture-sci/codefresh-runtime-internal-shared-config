@@ -30,11 +30,11 @@ gitops-runtime:
         service.slack: |
           token: $slack-token
         service.channels: ["laurent.rochette@octopus.com"]
-# app.name == "color-dev" and
+# and app.metadata.name == "color-dev" and app.status.operationState.phase in ['Succeeded']
       triggers:
         trigger.outofsync: |
           - description: Application color is out of sync.
-            when:  app.status.sync.status == "OutOfSync" and app.status.operationState.phase in ['Succeeded']
+            when:  app.status.sync.status == "OutOfSync"
             oncePer: app.status.operationState.operation.sync.changeRevision
             send:
             - outofsync
