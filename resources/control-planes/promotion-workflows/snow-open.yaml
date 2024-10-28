@@ -25,24 +25,12 @@ spec:
       - name: CR_SYSID
         globalName: CR_SYSID
         valueFrom:
-          expression: "tasks['create-sn-cr'].outputs.parameters['CR_SYSID']"
+          expression: "{{tasks['create-sn-cr'].outputs.parameters['CR_SYSID']}}"
 
     dag:
       tasks:
-        # - name: argocd-get
-        #   template: argocd-get-tmpl
-        #   arguments:
-        #     parameters:
-        #     - name: ARGOCD_SERVER
-        #       value: argo-cd-server:80 # or whatever service name you end up using
-        #     - name: APP_NAME
-        #       value: "{{ workflow.parameters.APP_NAME }}"
-        #     - name: TOKEN_SECRET
-        #       value: argocd-token
-        #     - name: TOKEN_SECRET_KEY
-        #       value: token
+
         - name: create-sn-cr
-          # depends: argocd-get
           templateRef:
             name: argo-hub.servicenow.1.3.1
             template: createcr
