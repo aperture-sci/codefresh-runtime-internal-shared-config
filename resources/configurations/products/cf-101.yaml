@@ -22,9 +22,6 @@ spec:
       file: version.yaml
       jsonPath: $.version
     promotion:
-      version.yaml:
-        jsonPaths:
-          - $.version
       values.yaml:
         jsonPaths:
           - $.*.image
