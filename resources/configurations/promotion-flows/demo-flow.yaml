@@ -11,10 +11,13 @@ spec:
       dependsOn:
         - dev
       policy:
+        action: commit
         postAction: smoketests
     - environment: pro-asia
       dependsOn:
         - qa
+      policy:
+        action: commit
     - environment: prod-us
       dependsOn:
         - pro-asia
