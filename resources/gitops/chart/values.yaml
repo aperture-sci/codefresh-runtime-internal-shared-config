@@ -29,6 +29,7 @@ gitops-runtime:
       notifiers:
         service.slack: |
           token: $slack-token
+        service.channels: ["laurent.rochette@octopus.com"]
       triggers:
         trigger.outofsync: |
           - description: Application color is out of sync.
