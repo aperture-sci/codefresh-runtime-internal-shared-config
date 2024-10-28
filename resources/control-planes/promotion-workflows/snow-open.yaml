@@ -44,7 +44,7 @@ spec:
         - name: create-sn-cr
           # depends: argocd-get
           templateRef:
-            name: argo-hub.servicenow.1.3.0
+            name: argo-hub.servicenow.1.3.1
             template: createcr
           arguments:
             parameters:
@@ -74,37 +74,3 @@ spec:
   - name: approve
     suspend: {}
       # duration: "72h"
-  # - name: argocd-get-tmpl
-  #   inputs:
-  #     parameters:
-  #     - name: ARGOCD_SERVER
-  #     - name: APP_NAME
-  #     - name: TOKEN_SECRET
-  #       default: argocd-token
-  #     - name: TOKEN_SECRET_KEY
-  #       default: token
-  #   outputs:
-  #     parameters:
-  #     - name: APP_MANIFEST
-  #       # globalName: APP_MANIFEST # optional - any global output will reach the post-action as well
-  #       valueFrom:
-  #         path: /tmp/result.json
-  #   script:
-  #     name: app-get
-  #     image: quay.io/codefreshplugins/argo-hub-workflows-argocd-versions-0.0.1-images-argocd-cli:main
-  #     env:
-  #     - name: APP_NAME
-  #       value: "{{ inputs.parameters.APP_NAME }}"
-  #     - name: ARGOCD_SERVER
-  #       value: "{{ inputs.parameters.ARGOCD_SERVER }}"
-  #     - name: ARGOCD_AUTH_TOKEN
-  #       valueFrom:
-  #         secretKeyRef:
-  #           name: "{{ inputs.parameters.TOKEN_SECRET }}"
-  #           key: "{{ inputs.parameters.TOKEN_SECRET_KEY }}"
-  #     - name: ARGOCD_OPTS
-  #       value: --grpc-web --plaintext
-  #     command:
-  #     - sh
-  #     source: |
-  #       argocd app get ${APP_NAME} --output json > /tmp/result.json
