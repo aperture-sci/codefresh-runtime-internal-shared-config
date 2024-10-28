@@ -25,7 +25,7 @@ spec:
       - name: CR_SYSID
         # globalName: CR_SYSID
         valueFrom:
-          expression: "tasks['create-sn-cr'].outputs.parameters.['CR_SYSID']"
+          expression: "tasks['create-sn-cr'].outputs.parameters['CR_SYSID']"
 
     dag:
       tasks:
