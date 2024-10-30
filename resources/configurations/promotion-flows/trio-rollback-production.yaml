@@ -1,0 +1,19 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionFlow
+metadata:
+  name: trio-rollback-production
+  annotations:
+    description: ""
+spec:
+  triggerEnvironment: production
+  steps:
+    - environment: staging
+      dependsOn:
+        - production
+    - environment: qa
+      dependsOn:
+        - production
+    - environment: dev
+      dependsOn:
+        - staging
+        - qa
