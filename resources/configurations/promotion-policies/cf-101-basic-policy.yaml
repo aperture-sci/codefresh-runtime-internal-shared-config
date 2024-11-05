@@ -1,0 +1,15 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionPolicy
+metadata:
+  name: cf-101-basic-policy
+spec:
+  priority: 1
+  selector:
+    product:
+      names:
+        - cf-101
+    targetEnvironment:
+      names:
+        - dev
+  policy:
+    action: commit
