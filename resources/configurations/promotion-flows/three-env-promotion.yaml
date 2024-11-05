@@ -17,5 +17,4 @@ spec:
       dependsOn:
         - qa
       policy:
-        preAction: smoketests
-        postAction: smoketests
+        action: commit
