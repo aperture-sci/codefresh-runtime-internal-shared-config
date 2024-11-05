@@ -1,0 +1,15 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionFlow
+metadata:
+  name: liner-flow
+  annotations:
+    description: ""
+spec:
+  triggerEnvironment: dev
+  steps:
+    - environment: qa
+      dependsOn:
+        - dev
+    - environment: production
+      dependsOn:
+        - qa
