@@ -11,5 +11,7 @@ spec:
     targetEnvironment:
       names:
         - dev
+        - production
+        - qa
   policy:
     action: commit
