@@ -11,8 +11,8 @@ spec:
       dependsOn:
         - dev
       policy:
-        action: commit
         preAction: pre-action
+        postAction: post-action
     - environment: production
       dependsOn:
         - qa
