@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: pre-action-cr
+  name: pre-action-role
 rules:
 - apiGroups:
   - ""
@@ -15,15 +15,15 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: pre-action-crb
+  name: pre-action-rb
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: pre-action-cr
+  name: pre-action-role
 subjects:
 - kind: ServiceAccount
   name: pre-action-sa
-  namespace: runtime
+  namespace: gitops
 
 ---
 apiVersion: v1
