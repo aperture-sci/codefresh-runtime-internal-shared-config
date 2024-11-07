@@ -9,4 +9,4 @@ dependencies:
     # version: 0.13.4
 
     repository: oci://quay.io/codefresh/dev
-    version: 	0.14.0-2b3386c
+    version: 	0.14.0-0e0f0c8

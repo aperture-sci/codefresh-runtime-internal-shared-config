@@ -1,7 +1,5 @@
 gitops-runtime:
-  gitops-operator:
-    env:
-      ARGO_CD_URL: argo-cd-server:80
+  # gitops-operator:
     # argoCdNotifications:
     #   resources:
     #     limits:
