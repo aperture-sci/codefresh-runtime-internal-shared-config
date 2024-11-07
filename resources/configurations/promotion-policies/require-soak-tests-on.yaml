@@ -4,7 +4,10 @@ metadata:
   name: require-soak-tests-on
 spec:
   priority: 5
-  selector: {}
+  selector:
+    product:
+      names:
+        - test
   policy:
     action: pr
     preAction: soak-test
