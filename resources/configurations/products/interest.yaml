@@ -3,6 +3,8 @@ kind: Product
 metadata:
   name: interest
 spec:
+  promotionFlows:
+    - name: sequential-interest  
   promotionTemplate:
     versionSource:
       file: Chart.yaml
