@@ -16,7 +16,3 @@ spec:
     - environment: production
       dependsOn:
         - qa
-      policy:
-        action: commit
-        preAction: smoketests
-        postAction: smoketests
