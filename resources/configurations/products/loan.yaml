@@ -6,12 +6,11 @@ spec:
   promotionFlows:
     - name: sequential-loan
       gitTriggerSelectors:
-
         - key: commitMessage
           operator: In
           values:
             - '[promotion-sequential-loan]'
-
+            - '* [promotion-sequential-loan] *'
   promotionTemplate:
     versionSource:
       file: Chart.yaml
@@ -19,7 +18,7 @@ spec:
     promotion:
       Chart.yaml:
         jsonPaths:
-        - $.appVersion
+          - $.appVersion
       values.yaml:
         jsonPaths:
-        - $.loans.image.tag
+          - $.loans.image.tag
