@@ -5,8 +5,8 @@ name: codefresh-gitops-runtime
 version: 0.13.4
 dependencies:
   - name: gitops-runtime
-    repository: oci://quay.io/codefresh
-    version: 0.13.4
+    # repository: oci://quay.io/codefresh
+    # version: 0.13.4
 
-    # repository: oci://quay.io/codefresh/dev
-    # version: 0.0.0-fix-revert-argocd-bump-081391c
+    repository: oci://quay.io/codefresh/dev
+    version: 0.0.0-fix-revert-argocd-bump-081391c
