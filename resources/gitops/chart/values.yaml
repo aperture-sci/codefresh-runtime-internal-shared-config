@@ -22,48 +22,48 @@ gitops-runtime:
   argo-cd:
     acrController:
       enabled: true
-    notifications:
-      enabled: true
-      secret:
-        create: false
-      # bots:
-      #   slack: {}
-      notifiers:
-        service.slack: |
-          token: $slack-token
-        service.channels: ["laurent.rochette@octopus.com"]
-# and app.metadata.name == "color-dev" and app.status.operationState.phase in ['Succeeded']
-      triggers:
-        trigger.outofsync: |
-          - description: Application color is out of sync.
-            when:  app.status.sync.status == "OutOfSync"
-            oncePer: app.status.operationState.operation.sync.changeRevision
-            send:
-            - outofsync
-      templates:
-        template.outofsync: |
-          message: |
-            Application {{.app.metadata.name}} sync is {{.app.status.sync.status}}.
-            Application details: {{.context.argocdUrl}}/applications/{{.app.metadata.name}}.
-          slack:
-            attachments: |
-              [{
-                "title": "{{.app.metadata.name}}",
-                "title_link": "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}",
-                "color": "#18be52",
-                "fields": [{
-                  "title": "Sync Status",
-                  "value": "{{.app.status.sync.status}}",
-                  "short": true
-                }, {
-                  "title": "Repository",
-                  "value": "{{.app.spec.source.repoURL}}",
-                  "short": true
-                }]
-              }]
-            deliveryPolicy: Post
-            groupingKey: ''
-            notifyBroadcast: false
+#     notifications:
+#       enabled: true
+#       secret:
+#         create: false
+#       # bots:
+#       #   slack: {}
+#       notifiers:
+#         service.slack: |
+#           token: $slack-token
+#         service.channels: ["laurent.rochette@octopus.com"]
+# # and app.metadata.name == "color-dev" and app.status.operationState.phase in ['Succeeded']
+#       triggers:
+#         trigger.outofsync: |
+#           - description: Application color is out of sync.
+#             when:  app.status.sync.status == "OutOfSync"
+#             oncePer: app.status.operationState.operation.sync.changeRevision
+#             send:
+#             - outofsync
+#       templates:
+#         template.outofsync: |
+#           message: |
+#             Application {{.app.metadata.name}} sync is {{.app.status.sync.status}}.
+#             Application details: {{.context.argocdUrl}}/applications/{{.app.metadata.name}}.
+#           slack:
+#             attachments: |
+#               [{
+#                 "title": "{{.app.metadata.name}}",
+#                 "title_link": "{{.context.argocdUrl}}/applications/{{.app.metadata.name}}",
+#                 "color": "#18be52",
+#                 "fields": [{
+#                   "title": "Sync Status",
+#                   "value": "{{.app.status.sync.status}}",
+#                   "short": true
+#                 }, {
+#                   "title": "Repository",
+#                   "value": "{{.app.spec.source.repoURL}}",
+#                   "short": true
+#                 }]
+#               }]
+#             deliveryPolicy: Post
+#             groupingKey: ''
+#             notifyBroadcast: false
 
     eventReporter:
       # enabled: true
