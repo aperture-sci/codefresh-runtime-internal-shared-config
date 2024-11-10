@@ -9,4 +9,4 @@ dependencies:
     # version: 0.13.4
 
     repository: oci://quay.io/codefresh/dev
-    version: 0.0.0-fix-revert-argocd-bump-3a34569
+    version: 0.0.0-fix-revert-argocd-bump-98d4306
