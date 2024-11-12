@@ -3,14 +3,14 @@ kind: Product
 metadata:
   name: interest
 spec:
-  promotionFlows:
-    - name: sequential-interest
-      gitTriggerSelectors:
-        - key: commitMessage
-          operator: In
-          values:
-            - '[willneverhappens]'
-            # to be sure we can promote by hand
+  # promotionFlows:
+  #   - name: sequential-interest
+  #     gitTriggerSelectors:
+  #       - key: commitMessage
+  #         operator: In
+  #         values:
+  #           - '[willneverhappens]'
+  #           # to be sure we can promote by hand
   promotionTemplate:
     versionSource:
       file: Chart.yaml
