@@ -3,13 +3,30 @@ kind: PromotionFlow
 metadata:
   name: termination-timout-test
   annotations:
-    description: ""
+    version: 0.0.1
+    description: sequential flow for termination timout test
 spec:
   triggerEnvironment: dev
+  postTrigger: post-action
   steps:
     - environment: qa
       dependsOn:
         - dev
+      policy:
+        preAction: pre-action
+        postAction: smoketests
+        action: commit
     - environment: staging
       dependsOn:
         - qa
+      policy:
+        preAction: pre-action
+        postAction: post-action
+        action: commit
+    - environment: production
+      dependsOn:
+        - staging
+      policy:
+        preAction: pre-action
+        postAction: post-action
+        action: commit
