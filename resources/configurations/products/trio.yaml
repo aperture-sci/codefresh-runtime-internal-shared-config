@@ -17,6 +17,12 @@ spec:
           operator: In
           values:
             - hotfix
+    - name: pr-flow-jira
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - '*pr-jira*'
   promotionTemplate:
     versionSource:
       file: Chart.yaml
