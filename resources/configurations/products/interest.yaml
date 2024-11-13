@@ -10,7 +10,12 @@ spec:
           operator: In
           values:
             - '[willneverhappens]'
-            # to be sure we can promote by hand
+    - name: simple-pr-flow
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - '*pr-flow*'
   promotionTemplate:
     versionSource:
       file: Chart.yaml
