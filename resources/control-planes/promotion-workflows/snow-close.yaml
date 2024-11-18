@@ -19,26 +19,17 @@ spec:
   arguments:
     parameters:
     - name: APP_NAME
-    - name: parameters
+    - name: CR_SYSID
       value: ""
   templates:
   - name: main
     inputs:
       parameters:
       - name: APP_NAME
-      - name: parameters
-        value: ""
+      - name: CR_SYSID
     dag:
       tasks:
-        - name: extract-parameters
-          template: extract-parameters-tmpl
-          arguments:
-            parameters:
-            - name: parameters
-              value: "{{ inputs.parameters.parameters }}"
-
         - name: close-sn-cr
-          depends: extract-parameters
           templateRef:
             name: argo-hub.servicenow.1.3.0
             template: closecr
@@ -51,33 +42,10 @@ spec:
             - name: CR_DATA
               value: '{"work_notes":"this is a message for the work notes"}'
             - name: CR_SYSID
-              value: '{{ tasks.extract-parameters.outputs.parameters.CR_SYSID}}'
+              value: '{{ inputs.parameters.CR_SYSID }}'
             - name: LOG_LEVEL
               value: info
             - name: CR_CLOSE_CODE
               value: "successful"
             - name: CR_CLOSE_NOTES
               value: "App {{ workflow.parameters.APP_NAME }} installed with success so we close the Change Request."
-
-  # Additional templates
-  - name: extract-parameters-tmpl
-    inputs:
-      parameters:
-      - name: parameters
-    outputs:
-      parameters:
-      - name: CR_SYSID
-        valueFrom:
-          path: /tmp/sysid.txt
-    script:
-      image: quay.io/codefresh/curl-base:8.9.1 # because it contains jq
-      env:
-      - name: parameters
-        value: "{{ inputs.parameters.parameters }}"
-      command:
-      - sh
-      source: |
-        echo ${parameters}
-        export SYSID=$(echo ${parameters} | jq -r '.[0].value')
-        echo "got SYSID \"${SYSID}\""
-        echo $SYSID > /tmp/sysid.txt
