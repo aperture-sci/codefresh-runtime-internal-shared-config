@@ -1,0 +1,57 @@
+gitops-runtime:
+  argo-cd:
+    acrController:
+      enabled: true
+    eventReporter:
+      env:
+        - name: USE_GRPC
+          value: 'false'
+      replicas: 4
+    server:
+      replicas: 2
+      resources:
+        requests:
+          cpu: '0.3'
+          memory: 400Mi
+  argo-workflows:
+    artifactRepository:
+      archiveLogs: true
+      s3:
+        accessKeySecret: {}
+        bucket: aperturedevops
+        endpoint: s3.amazonaws.com
+        insecure: false
+        region: us-east-1
+        roleARN: arn:aws:iam::336151728602:role/codefresh_s3
+        secretKeySecret: {}
+    controller:
+      workflowDefaults:
+        spec:
+          serviceAccountName: workflows-default
+    server:
+      serviceAccount:
+        annotations:
+          eks.amazonaws.com/role-arn: arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev
+    useDefaultArtifactRepo: true
+    useStaticCredentials: false
+    workflow:
+      serviceAccount:
+        annotations:
+          eks.amazonaws.com/role-arn: arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev
+        create: true
+        name: workflows-default
+  global:
+    codefresh:
+      accountId: 641dfab29939b208915c0d4e
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      ingress:
+        className: nginx-public
+        enabled: false
+      isConfigurationRuntime: true
+      name: demo
+  installer:
+    skipValidation: false
