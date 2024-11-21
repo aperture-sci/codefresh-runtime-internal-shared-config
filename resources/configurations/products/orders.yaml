@@ -9,7 +9,7 @@ spec:
         - key: commitMessage
           operator: In
           values:
-            - '[promotion:sequential-orders]'
+            - '*[promotion:sequential-orders]*'
   # promotionTemplateRef: promotion-config-orders
   promotionTemplate:
     versionSource:
