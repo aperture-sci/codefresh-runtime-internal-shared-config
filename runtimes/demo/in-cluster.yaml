@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,demo/demo-dev-rollout-reporter.yaml,demo/demo-dev-rollouts.yaml,demo/demo.yaml,demo/devops-demo.yaml,demo/prod-asia-rollout-reporter.yaml,demo/prod-asia-rollouts.yaml,runtimes/demo/**/*.yaml,runtimes/demo/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,demo/demo-dev-rollout-reporter.yaml,demo/demo-dev-rollouts.yaml,demo/demo.yaml,demo/devops-demo.yaml,demo/prod-asia-rollout-reporter.yaml,demo/prod-asia-rollouts.yaml,demo/prod-eu-rollout-reporter.yaml,demo/prod-eu-rollouts.yaml,runtimes/demo/**/*.yaml,runtimes/demo/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
