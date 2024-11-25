@@ -6,20 +6,20 @@ metadata:
   labels:
     codefresh.io/entity: internal-config
     codefresh.io/internal: 'true'
-  name: target-asia
+  name: prod-east
 spec:
   destination:
     namespace: default
-    server: https://asia.kubecon.sales-dev.codefresh.io
+    server: https://demo-prod-us-east-vcluster.cs-sandbox.cf-infra.com
   project: default
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/gitops/*.yaml,runtimes/gitops/**/*.yaml,gitops-managed-cluster-target-asia-cm.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,demo-managed-cluster-prod-east-cm.yaml,runtimes/demo/**/*.yaml,runtimes/demo/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
-      https://github.com/aperture-fresh/codefresh-runtime-internal-shared-config.git
+      https://github.com/aperture-sci/codefresh-runtime-internal-shared-config.git
     targetRevision: HEAD
   syncPolicy:
     automated:

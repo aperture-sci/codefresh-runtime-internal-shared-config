@@ -6,19 +6,20 @@ metadata:
   labels:
     codefresh.io/entity: internal-config
     codefresh.io/internal: 'true'
-  name: target-eu
+  name: prod-eu
 spec:
   destination:
     namespace: default
-    server: https://eu.kubecon.sales-dev.codefresh.io
+    server: https://demo-prod-eu-vcluster.cs-sandbox.cf-infra.com
   project: default
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/gitops/*.yaml,runtimes/gitops/**/*.yaml,gitops-managed-cluster-target-eu-cm.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,demo-managed-cluster-prod-eu-cm.yaml,runtimes/demo/**/*.yaml,runtimes/demo/*.yaml}
       recurse: true
     path: resources
-    repoURL: https://github.com/aperture-sci/ISC.git
+    repoURL: >-
+      https://github.com/aperture-sci/codefresh-runtime-internal-shared-config.git
     targetRevision: HEAD
   syncPolicy:
     automated:

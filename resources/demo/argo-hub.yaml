@@ -1,24 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: promotion-flow-demo-template
+  name: argo-hub
   labels:
     codefresh.io/entity: 'git-source'
     codefresh.io/internal: 'false'
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
-  source:
-    repoURL: https://github.com/aperture-sci/promotion-demo-templates.git
-    path: .
-    targetRevision: main
-    directory:
-      include: '*'
-      exclude: ''
-      recurse: true
+  project: cf-git-sources
+  sources:
+    - repoURL: https://github.com/codefresh-io/argo-hub.git
+      path: .
+      targetRevision: codefresh
+      directory:
+        include: 'workflows/**/*.yaml'
+        exclude: '**/images/**/*'
+        recurse: true
   destination:
-    namespace: gitops
+    namespace: demo
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
