@@ -39,7 +39,7 @@ spec:
             - name: TOKEN
               value: cf-api-key-aperture
             - name: CF_RUNTIME
-              value: gitops
+              value: demo
             - name: SN_INSTANCE
               value: "https://dev205910.service-now.com"
             - name: SN_AUTH
