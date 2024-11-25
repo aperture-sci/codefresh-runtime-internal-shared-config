@@ -23,7 +23,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: pre-action-sa
-  namespace: gitops
+  namespace: demo
 
 ---
 apiVersion: v1
