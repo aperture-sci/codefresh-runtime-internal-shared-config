@@ -8,9 +8,9 @@ metadata:
 spec:
   triggerEnvironment: dev
   steps:
-    - environment: production
+    - environment: prod-us
       dependsOn:
         - dev
       policy:
+        action: pr
         postAction: smoketests
-        action: commit
