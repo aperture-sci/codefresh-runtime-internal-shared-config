@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argohub-pro
+  name: argohub-prod
   labels:
     codefresh.io/entity: 'git-source'
     codefresh.io/internal: 'false'

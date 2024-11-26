@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,demoprod/apps-prod.yaml,demoprod/argohub-pro.yaml,demoprod/demoprod.yaml,runtimes/demoprod/**/*.yaml,runtimes/demoprod/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,demoprod/apps-prod.yaml,demoprod/argohub-prod.yaml,demoprod/demoprod.yaml,runtimes/demoprod/**/*.yaml,runtimes/demoprod/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
