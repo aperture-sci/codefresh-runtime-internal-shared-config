@@ -5,14 +5,14 @@ metadata:
   annotations:
     description: ""
 spec:
-  triggerEnvironment: production
+  triggerEnvironment: prod-us
   steps:
     - environment: staging
       dependsOn:
-        - production
+        - prod-us
     - environment: qa
       dependsOn:
-        - production
+        - prod-us
     - environment: dev
       dependsOn:
         - staging
