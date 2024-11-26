@@ -7,12 +7,12 @@ metadata:
 spec:
   triggerEnvironment: dev
   steps:
-    - environment: production
+    - environment: prod-us
       dependsOn:
         - dev
     - environment: staging
       dependsOn:
-        - production
+        - prod-us
     - environment: qa
       dependsOn:
-        - production
+        - prod-us

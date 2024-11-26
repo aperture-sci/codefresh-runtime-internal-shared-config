@@ -28,7 +28,7 @@ spec:
         preAction: smoketests
         action: commit
         postAction: post-action
-    - environment: production
+    - environment: prod-us
       dependsOn:
         - qa
       policy:

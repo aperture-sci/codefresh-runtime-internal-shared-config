@@ -10,6 +10,6 @@ spec:
     - environment: qa
       dependsOn:
         - dev
-    - environment: production
+    - environment: prod-us
       dependsOn:
         - qa

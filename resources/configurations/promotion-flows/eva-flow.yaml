@@ -23,7 +23,7 @@ spec:
     #     preAction: pre-action
     #     postAction: post-action
     #     action: commit
-    # - environment: production
+    # - environment: prod-us
     #   dependsOn:
     #     - staging
     #     - qa

@@ -12,7 +12,7 @@ spec:
         - dev
       policy:
         action: commit
-    - environment: production
+    - environment: prod-us
       dependsOn:
         - staging
       policy:

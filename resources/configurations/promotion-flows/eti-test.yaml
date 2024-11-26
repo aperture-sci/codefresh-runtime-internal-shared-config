@@ -19,7 +19,7 @@ spec:
       policy:
         action: commit
         preAction: eti-new
-    - environment: production
+    - environment: prod-us
       dependsOn:
         - qa
         - staging
