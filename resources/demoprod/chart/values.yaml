@@ -15,6 +15,12 @@ gitops-runtime:
           memory: 400Mi
   garage-workflows-artifact-storage:
     enabled: true
+    persistence:
+      # -- Volume that stores artifacts and logs for workflows
+      data:
+        # -- When empty value empty the default storage class for the cluster will be used
+        storageClass: ""
+        size: 2Gi
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
