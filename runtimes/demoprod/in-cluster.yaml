@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,demoprod/apps-prod.yaml,demoprod/argohub-prod.yaml,demoprod/demoprod.yaml,docker-imtg/integration.config.yaml,docker-imtg/integration.secret.yaml,runtimes/demoprod/**/*.yaml,runtimes/demoprod/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,demoprod/apps-prod.yaml,demoprod/argohub-prod.yaml,demoprod/demoprod.yaml,docker-imtg/integration.config.yaml,docker-imtg/integration.secret.yaml,docker-intg/integration.config.yaml,docker-intg/integration.secret.yaml,runtimes/demoprod/**/*.yaml,runtimes/demoprod/*.yaml}
       recurse: true
     path: resources
     repoURL: >-
