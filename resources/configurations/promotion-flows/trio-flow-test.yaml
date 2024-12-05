@@ -28,5 +28,5 @@ spec:
         - qa
       policy:
         preAction: pre-action
-        postAction: post-action
+        postAction: smoketests
         action: commit
