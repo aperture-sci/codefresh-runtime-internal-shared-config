@@ -8,6 +8,7 @@ metadata:
     codefresh.io/workflow-origin: promotion
     description: smoke test simulation
 spec:
+  serviceAccountName: promotion-template
   arguments:
     parameters:
     - name: APP_NAME
