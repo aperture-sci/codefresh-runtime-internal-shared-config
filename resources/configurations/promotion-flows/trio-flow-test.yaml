@@ -7,7 +7,7 @@ metadata:
     description: Flow to show parallel deployment
 spec:
   triggerEnvironment: dev
-  postTrigger: post-action
+  postTrigger: smoketests
   steps:
     - environment: qa
       dependsOn:
