@@ -18,8 +18,8 @@ spec:
   destination:
     namespace: default
     server: https://demo-prod-asia-vcluster.cs-sandbox.cf-infra.com
-  syncPolicy:
-    automated:
-      allowEmpty: true
-      prune: true
-      selfHeal: true
+  # syncPolicy:
+  #   automated:
+  #     allowEmpty: true
+  #     prune: true
+  #     selfHeal: true
