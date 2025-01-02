@@ -8,5 +8,8 @@ spec:
     product:
       names:
         - membership
+    targetEnvironment:
+      types:
+        - PROD
   policy:
     action: commit
