@@ -11,9 +11,9 @@ spec:
           values:
             - '[promotion:eva-flow]*'
   promotionTemplate:
-    # versionSource:
-    #   file: values.yaml
-    #   jsonPath: $.appVersion
+    versionSource:
+      file: values.yaml
+      jsonPath: $.appVersion
     promotion:
       values.yaml:
         jsonPaths:
