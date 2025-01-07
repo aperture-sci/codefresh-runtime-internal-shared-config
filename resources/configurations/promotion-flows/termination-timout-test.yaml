@@ -6,7 +6,7 @@ metadata:
     version: 0.0.1
     description: sequential flow for termination timout test
 spec:
-  promotionTimeoutLimit: 12
+  promotionTimeoutLimit: 1
   triggerEnvironment: dev
   postTrigger: post-action
   steps:
