@@ -1,0 +1,9 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionFlow
+metadata:
+  name: eti-test-new
+  annotations:
+    description: ""
+spec:
+  triggerEnvironment: dev
+  steps: []
