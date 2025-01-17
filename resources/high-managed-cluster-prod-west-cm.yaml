@@ -4,5 +4,5 @@ metadata:
   name: high-managed-cluster-prod-west-cm
   labels:
     app.kubernetes.io/managed-by: codefresh
-data:
+data: 
   managed-by-runtime: high
