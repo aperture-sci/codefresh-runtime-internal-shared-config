@@ -6,16 +6,16 @@ metadata:
   labels:
     codefresh.io/entity: internal-config
     codefresh.io/internal: 'true'
-  name: in-cluster
+  name: prod-west
 spec:
   destination:
-    namespace: demoprod
-    server: https://kubernetes.default.svc
+    namespace: default
+    server: https://demo-prod-us-west-vcluster.cs-sandbox.cf-infra.com
   project: default
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,demoprod/*.yaml,docker-imtg/integration.config.yaml,docker-imtg/integration.secret.yaml,docker-intg/integration.config.yaml,docker-intg/integration.secret.yaml,runtimes/demoprod/**/*.yaml,runtimes/demoprod/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,high-managed-cluster-prod-west-cm.yaml,runtimes/high/**/*.yaml,runtimes/high/*.yaml}
       recurse: true
     path: resources
     repoURL: >-

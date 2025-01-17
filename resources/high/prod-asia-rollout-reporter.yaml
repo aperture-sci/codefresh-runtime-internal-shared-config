@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: prod-east-rollout-reporter-sa
+  name: prod-asia-rollout-reporter-sa
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: prod-east-rollout-reporter-role
+  name: prod-asia-rollout-reporter-role
 rules:
 - apiGroups:
   - argoproj.io
@@ -38,28 +38,28 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: prod-east-rollout-reporter-role-binding
+  name: prod-asia-rollout-reporter-role-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: prod-east-rollout-reporter-role
+  name: prod-asia-rollout-reporter-role
 subjects:
 - kind: ServiceAccount
-  namespace: demoprod
-  name: prod-east-rollout-reporter-sa
+  namespace: high
+  name: prod-asia-rollout-reporter-sa
 
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
-  name: prod-east-rollout-reporter
+  name: prod-asia-rollout-reporter
   labels:
     app.kubernetes.io/managed-by: cf
 spec:
   eventBusName: codefresh-eventbus
   resource:
     analysisruns:
-      cluster: prod-east
+      cluster: prod-asia
       group: argoproj.io
       version: v1alpha1
       resource: analysisruns
@@ -68,7 +68,7 @@ spec:
       - UPDATE
       - DELETE
     replicasets:
-      cluster: prod-east
+      cluster: prod-asia
       group: apps
       version: v1
       resource: replicasets
@@ -77,7 +77,7 @@ spec:
       - UPDATE
       - DELETE
     rollouts:
-      cluster: prod-east
+      cluster: prod-asia
       group: argoproj.io
       version: v1alpha1
       resource: rollouts
@@ -86,29 +86,29 @@ spec:
       - UPDATE
       - DELETE
   template:
-    serviceAccountName: prod-east-rollout-reporter-sa
+    serviceAccountName: prod-asia-rollout-reporter-sa
 
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: prod-east-rollout-reporter
+  name: prod-asia-rollout-reporter
   labels:
     app.kubernetes.io/managed-by: cf
 spec:
   dependencies:
   - name: analysisruns
-    eventSourceName: prod-east-rollout-reporter
+    eventSourceName: prod-asia-rollout-reporter
     eventName: analysisruns
   - name: replicasets
-    eventSourceName: prod-east-rollout-reporter
+    eventSourceName: prod-asia-rollout-reporter
     eventName: replicasets
   - name: rollouts
-    eventSourceName: prod-east-rollout-reporter
+    eventSourceName: prod-asia-rollout-reporter
     eventName: rollouts
   eventBusName: codefresh-eventbus
   template:
-    serviceAccountName: prod-east-rollout-reporter-sa
+    serviceAccountName: prod-asia-rollout-reporter-sa
   triggers:
   - template:
       name: rollouts
