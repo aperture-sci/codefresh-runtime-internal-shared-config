@@ -26,8 +26,10 @@ spec:
     - environment: prod-eu
       dependsOn:
         - staging
+      policy:
+        action: commit
     - environment: prod-asia
       dependsOn:
         - staging
       policy:
-        action: pr
+        action: commit

@@ -26,3 +26,5 @@ spec:
     - environment: prod-us
       dependsOn:
         - staging
+      policy:
+        action: commit
