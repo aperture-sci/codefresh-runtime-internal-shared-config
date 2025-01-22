@@ -3,7 +3,7 @@ kind: PromotionFlow
 metadata:
   name: sequential-accounts
   annotations:
-    version: 0.0.1
+    version: 0.0.2
     description: sequential flow for Accounts app
 spec:
   triggerEnvironment: dev
@@ -26,13 +26,18 @@ spec:
     - environment: prod-eu
       dependsOn:
         - staging
+      policy:
+        action: commit
+        preAction: pre-action
+        postAction: post-action
     - environment: prod-asia
       dependsOn:
         - staging
       policy:
-        action: pr
+        action: commit
     - environment: prod-us
       dependsOn:
         - staging
       policy:
-        action: pr
+        action: commit
+  promotionTimeoutLimit: 180
