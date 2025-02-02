@@ -9,6 +9,7 @@ spec:
   promotionTimeoutLimit: 1
   triggerEnvironment: dev
   postTrigger: post-action
+  onStart: post-action
   steps:
     - environment: qa
       dependsOn:
