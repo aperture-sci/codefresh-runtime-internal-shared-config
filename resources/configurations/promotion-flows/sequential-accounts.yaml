@@ -37,7 +37,8 @@ spec:
         action: commit
     - environment: prod-us
       dependsOn:
-        - staging
+        - prod-eu
+        - prod-asia
       policy:
         action: commit
   promotionTimeoutLimit: 180
