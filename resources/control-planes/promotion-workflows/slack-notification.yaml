@@ -11,7 +11,7 @@ metadata:
     codefresh.io/workflow-origin: promotion
     argo-hub/version: 0.0.2
     argo-hub/description: >-
-     This Workflow Template is an example for pre promotion workflow that send a 
+     This Workflow Template is an example for pre promotion workflow that send a
      slack message before the app is promoted
     argo-hub/categories: promotion example workflow
     argo-hub/license: MIT
@@ -48,7 +48,7 @@ spec:
             arguments:
               parameters:
                 - name: SLACK_CHANNEL
-                  value: `laurent.rochette@octopus.com`
+                  value: 'laurent.rochette@octopus.com'
                 - name: SLACK_TEXT
                   value: 'Application `{{ workflow.parameters.APP_NAME }}` is ready to be promoted'
                 - name: SLACK_TOKEN
