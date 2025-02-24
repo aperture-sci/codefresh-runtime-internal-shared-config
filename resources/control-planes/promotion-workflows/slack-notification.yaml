@@ -1,0 +1,33 @@
+# DO NOT REMOVE the following attributes:
+# annotations.codefresh.io/workflow-origin (identifies type of Workflow Template as Promotion Workflow)
+# annotations.version (identifies version of Promotion Workflow used)
+# annotations.description (identifies intended use of the Promotion Workflow)
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: slack-notification
+  annotations:
+    description: A template to send a Slack notification when a promotion start
+    version: 0.0.1
+    codefresh.io/workflow-origin: promotion
+spec:
+  arguments:
+    parameters:
+      - name: APP_NAME
+  entrypoint: slack-promotion
+  templates:
+    - name: slack-promotion
+      dag:
+        tasks:
+          - name: send-message
+            templateRef:
+              name: argo-hub.slack.0.0.2
+              template: send-message
+            arguments:
+              parameters:
+                - name: SLACK_CHANNEL
+                  value: 'laurent.rochette@octopus.com'
+                - name: SLACK_TEXT
+                  value: 'Application `{{ workflow.parameters.APP_NAME }}` is ready to be promoted'
+                - name: SLACK_TOKEN
+                  value: slack-token
