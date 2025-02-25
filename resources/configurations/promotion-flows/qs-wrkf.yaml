@@ -1,0 +1,17 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionFlow
+metadata:
+  name: qs-wrkf
+  annotations:
+    description: test
+    version: 0.0.1
+spec:
+  triggerEnvironment: dev
+  steps:
+    - environment: qa
+      dependsOn:
+        - dev
+      policy:
+        action: commit
+        preAction: slack-notification
+  promotionTimeoutLimit: 60
