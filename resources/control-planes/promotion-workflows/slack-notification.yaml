@@ -43,7 +43,7 @@ spec:
           - name: SLACK_MESSAGE
             value: 'Application `{{ workflow.parameters.APP_NAME }}` is ready to be promoted'
           - name: LOG_LEVEL
-            value: '{{ inputs.parameters.LOG_LEVEL }}'
+            value: 'info'
           - name: SLACK_TOKEN
             valueFrom:
               secretKeyRef:
