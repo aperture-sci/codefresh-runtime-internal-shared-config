@@ -24,29 +24,28 @@ metadata:
     argo-hub/icon_background: '#f4f4f4'
     description: A template to send a Slack notification when a promotion start
 spec:
-    spec:
-      arguments:
-        parameters:
-          - name: APP_NAME
-      entrypoint: slack-promotion
-      templates:
-        - name: slack-promotion
-          container:
-            name: main
-            imagePullPolicy: Always
-            image: quay.io/codefreshplugins/argo-hub-slack-post-to-channel:0.0.2-main
-            command:
-              - python
-              - /slack/slack.py
-            env:
-              - name: SLACK_CHANNEL
-                value: 'name@domain.com'
-              - name: SLACK_MESSAGE
-                value: 'Application `{{ workflow.parameters.APP_NAME }}` is ready to be promoted'
-              - name: LOG_LEVEL
-                value: '{{ inputs.parameters.LOG_LEVEL }}'
-              - name: SLACK_TOKEN
-                valueFrom:
-                  secretKeyRef:
-                    name: 'slack-token'
-                    key: token
+  arguments:
+    parameters:
+      - name: APP_NAME
+  entrypoint: slack-promotion
+  templates:
+    - name: slack-promotion
+      container:
+        name: main
+        imagePullPolicy: Always
+        image: quay.io/codefreshplugins/argo-hub-slack-post-to-channel:0.0.2-main
+        command:
+          - python
+          - /slack/slack.py
+        env:
+          - name: SLACK_CHANNEL
+            value: 'laurent.rochette@octopus.com'
+          - name: SLACK_MESSAGE
+            value: 'Application `{{ workflow.parameters.APP_NAME }}` is ready to be promoted'
+          - name: LOG_LEVEL
+            value: '{{ inputs.parameters.LOG_LEVEL }}'
+          - name: SLACK_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: 'slack-token'
+                key: token
