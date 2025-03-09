@@ -7,7 +7,6 @@ metadata:
     description: Flow to show parallel deployment
 spec:
   triggerEnvironment: dev
-  postTrigger: post-action
   steps:
     - environment: qa
       dependsOn:
@@ -31,3 +30,5 @@ spec:
         preAction: pre-action
         postAction: post-action
         action: commit
+  hooks:
+    onStart: post-action
