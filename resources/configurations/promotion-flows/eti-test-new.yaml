@@ -14,5 +14,3 @@ spec:
         action: commit
       hooks:
         onSuccess: post-action
-  hooks:
-    onStart: pre-action
