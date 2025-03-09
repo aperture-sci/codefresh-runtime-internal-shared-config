@@ -6,4 +6,13 @@ metadata:
     description: ""
 spec:
   triggerEnvironment: dev
-  steps: []
+  steps:
+    - environment: staging
+      dependsOn:
+        - dev
+      policy:
+        action: commit
+      hooks:
+        onSuccess: post-action
+  hooks:
+    onStart: pre-action
