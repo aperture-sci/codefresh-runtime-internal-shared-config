@@ -7,27 +7,11 @@ metadata:
     description: Flow to show Snow integration
 spec:
   triggerEnvironment: dev
-  postTrigger: post-action
   steps:
     - environment: qa
       dependsOn:
         - dev
       policy:
-        preAction: service-now-open
-        postAction: service-now-close
         action: commit
-    # - environment: staging
-    #   dependsOn:
-    #     - dev
-    #   policy:
-    #     preAction: pre-action
-    #     postAction: post-action
-    #     action: commit
-    # - environment: prod-us
-    #   dependsOn:
-    #     - staging
-    #     - qa
-    #   policy:
-    #     preAction: pre-action
-    #     postAction: post-action
-    #     action: commit
+  hooks:
+    onStart: service-now-open
