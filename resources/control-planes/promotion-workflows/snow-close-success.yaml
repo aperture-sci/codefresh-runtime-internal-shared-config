@@ -6,7 +6,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: service-now-close
+  name: service-now-close-success
   annotations:
     codefresh.io/workflow-origin: promotion
     codefresh.io/promotion-stage: post-action
