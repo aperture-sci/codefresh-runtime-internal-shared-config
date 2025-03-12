@@ -27,7 +27,7 @@ spec:
             expression: "tasks['create-sn-cr'].outputs.parameters['CR_SYSID']"
       dag:
         tasks:
-            - name: create-sn-cr
+          - name: create-sn-cr
             templateRef:
               name: argo-hub.servicenow.1.3.1
               template: createcr
