@@ -60,9 +60,9 @@ spec:
           arguments:
             parameters:
             - name: CR_SYSID
-              value: {{ tasks.create-sn-cr.outputs.parameters.CR_SYSID}}
+              value: '{{ tasks.create-sn-cr.outputs.parameters.CR_SYSID}}'
             - name: CR_NUMBER
-              value: {{ tasks.create-sn-cr.outputs.parameters.CR_NUMBER}}
+              value: '{{ tasks.create-sn-cr.outputs.parameters.CR_NUMBER}}'
 
   # Additional templates
   - name: approve
@@ -73,6 +73,12 @@ spec:
       parameters:
         - name: CR_NUMBER
         - name: CR_SYSID
+    outputs:
+      parameters:
+        - name: PROMOTION_CONTEXT
+          globalName: PROMOTION_CONTEXT
+          valueFrom:
+            path: /tmp/promotion-context.txt
     script:
       image: alpine
       command:
@@ -83,10 +89,3 @@ spec:
           echo "{\"CR_NUMBER\": \"${CR_NUMBER}\",\n" > /tmp/promotion-context.txt
           echo "\"CR_SYSID\": \"${CR_SYSID}\"}" >> /tmp/promotion-context.txt
           echo "$PROMOTION_CONTEXT" > /tmp/promotion-context.txt
-
-    outputs:
-      parameters:
-        - name: PROMOTION_CONTEXT
-          globalName: PROMOTION_CONTEXT
-          valueFrom:
-            path: /tmp/promotion-context.txt
