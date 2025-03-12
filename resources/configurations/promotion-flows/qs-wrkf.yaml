@@ -12,6 +12,7 @@ spec:
       dependsOn:
         - dev
       policy:
+        preAction: sn-open-cr
         action: commit
-        preAction: slack-notification
+        postAction: slack-notification
   promotionTimeoutLimit: 60
