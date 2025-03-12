@@ -16,5 +16,6 @@ spec:
       hooks:
         onSuccess: service-now-close-success
         onFail: service-now-close-failure
+  promotionTimeoutLimit: 300
   hooks:
     onStart: service-now-open
