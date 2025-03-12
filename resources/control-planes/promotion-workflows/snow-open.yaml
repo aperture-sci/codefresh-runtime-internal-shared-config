@@ -63,9 +63,9 @@ spec:
           arguments:
             parameters:
             - name: CR_SYSID
-              value: {{ tasks.create-sn-cr.outputs.parameters.CR_SYSID}}
+              value: '{{ tasks.create-sn-cr.outputs.parameters.CR_SYSID}}'
             - name: CR_NUMBER
-              value: {{ tasks.create-sn-cr.outputs.parameters.CR_NUMBER}}
+              value: '{{ tasks.create-sn-cr.outputs.parameters.CR_NUMBER}}'
 
   # Additional templates
   - name: approve
