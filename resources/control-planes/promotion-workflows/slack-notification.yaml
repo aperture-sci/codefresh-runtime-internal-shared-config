@@ -24,7 +24,7 @@ metadata:
     argo-hub/icon_background: '#f4f4f4'
     description: A template to send a Slack notification when a promotion start
 spec:
-  serviceAccountName: promotion-template
+  serviceAccountName: cf-default-promotion-workflows-sa
   arguments:
     parameters:
       - name: APP_NAME
@@ -42,7 +42,7 @@ spec:
           - name: SLACK_CHANNEL
             value: 'laurent.rochette@octopus.com'
           - name: SLACK_MESSAGE
-            value: 'Application `{{ workflow.parameters.APP_NAME }}` is ready to be promoted'
+            value: 'Application `{{ workflow.parameters.APP_NAME }}` has been promoted'
           - name: LOG_LEVEL
             value: 'info'
           - name: SLACK_TOKEN
