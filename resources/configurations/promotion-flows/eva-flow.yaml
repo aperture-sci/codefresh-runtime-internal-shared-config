@@ -7,6 +7,7 @@ metadata:
     description: Flow to show Snow integration
 spec:
   triggerEnvironment: dev
+  promotionTimeoutLimit: 300
   steps:
     - environment: qa
       dependsOn:
@@ -16,6 +17,5 @@ spec:
       hooks:
         onSuccess: service-now-close-success
         onFail: service-now-close-failure
-  promotionTimeoutLimit: 300
   hooks:
     onStart: service-now-open
