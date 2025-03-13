@@ -8,6 +8,7 @@ kind: WorkflowTemplate
 metadata:
   name: service-now-open-hook
   annotations:
+    codefresh.io/workflow-origin: promotion
     version: 0.0.1
     description: 'promotion workflow template'
 spec:
@@ -15,9 +16,9 @@ spec:
   arguments:
     parameters:
     - name: APP_NAME
-  entrypoint: n-open-cr-hook
+  entrypoint: sn-open-cr-hook
   templates:
-  - name: snow-create-cr
+  - name: sn-open-cr-hook
     outputs:
       parameters:
       - name: CR_SYSID
