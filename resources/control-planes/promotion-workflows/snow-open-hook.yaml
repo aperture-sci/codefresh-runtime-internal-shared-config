@@ -15,7 +15,7 @@ spec:
   arguments:
     parameters:
     - name: APP_NAME
-  entrypoint: snow-create-cr
+  entrypoint: n-open-cr-hook
   templates:
   - name: snow-create-cr
     outputs:

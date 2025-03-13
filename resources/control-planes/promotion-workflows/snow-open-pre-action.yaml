@@ -17,9 +17,9 @@ spec:
   arguments:
     parameters:
     - name: APP_NAME
-  entrypoint: sn-open-cr
+  entrypoint: sn-open-cr-pre
   templates:
-  - name: sn-open-cr
+  - name: sn-open-cr-pre
     outputs:
       parameters:
       - name: CR_SYSID
