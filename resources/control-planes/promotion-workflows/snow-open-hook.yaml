@@ -6,10 +6,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: service-now-open
+  name: service-now-open-hook
   annotations:
-    codefresh.io/workflow-origin: promotion
-    codefresh.io/promotion-stage: pre-action
     version: 0.0.1
     description: 'promotion workflow template'
 spec:
@@ -17,9 +15,9 @@ spec:
   arguments:
     parameters:
     - name: APP_NAME
-  entrypoint: main
+  entrypoint: snow-create-cr
   templates:
-  - name: main
+  - name: snow-create-cr
     outputs:
       parameters:
       - name: CR_SYSID
