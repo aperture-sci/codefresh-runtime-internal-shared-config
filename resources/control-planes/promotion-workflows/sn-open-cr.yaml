@@ -13,7 +13,7 @@ metadata:
     version: 0.0.1
     codefresh.io/workflow-origin: promotion
 spec:
-    serviceAccountName: cf-default-promotion-workflows-sa
+    serviceAccountName: promotion-template
     arguments:
       parameters:
         - name: APP_NAME
