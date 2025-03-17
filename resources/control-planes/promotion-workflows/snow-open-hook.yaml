@@ -29,7 +29,6 @@ spec:
 
     dag:
       tasks:
-
         - name: create-sn-cr
           templateRef:
             name: argo-hub.servicenow.1.3.1
@@ -57,7 +56,7 @@ spec:
         - name: wait
           template: approve
           depends: create-sn-cr
-        - name: cf_export
+        - name: cf-export
           depends: create-sn-cr
           template: set-promotion-context
           arguments:
