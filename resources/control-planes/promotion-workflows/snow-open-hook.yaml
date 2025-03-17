@@ -13,7 +13,7 @@ metadata:
     version: 0.0.1
     description: 'promotion workflow template'
 spec:
-  serviceAccountName: promotion-template
+  serviceAccountName: codefresh-sa
   arguments:
     parameters:
     - name: APP_NAME

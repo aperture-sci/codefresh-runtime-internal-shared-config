@@ -24,7 +24,7 @@ metadata:
     argo-hub/icon_background: '#f4f4f4'
     description: A template to send a Slack notification when a promotion start
 spec:
-  serviceAccountName: promotion-template
+  serviceAccountName: codefresh-sa # promotion-template
   arguments:
     parameters:
       - name: APP_NAME
