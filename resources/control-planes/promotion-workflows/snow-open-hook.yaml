@@ -13,7 +13,7 @@ metadata:
     version: 0.0.1
     description: 'promotion workflow template'
 spec:
-  serviceAccountName: pre-action-sa
+  serviceAccountName: promotion-template
   arguments:
     parameters:
     - name: APP_NAME
