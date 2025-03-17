@@ -14,7 +14,7 @@ metadata:
     description: 'promotion workflow template'
 
 spec:
-  serviceAccountName: codefresh-sa
+  serviceAccountName: promotion-template
   entrypoint: main
   arguments:
     parameters:
