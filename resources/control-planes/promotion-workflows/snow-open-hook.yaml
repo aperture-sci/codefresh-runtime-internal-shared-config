@@ -21,7 +21,7 @@ spec:
     - name: PROMOTION_FLOW_NAME
     - name: RELEASE_URL
     - name: COMMIT_SHA
-    - name: VERSION
+    # - name: VERSION
   entrypoint: sn-open-cr-hook
   templates:
   - name: sn-open-cr-hook
