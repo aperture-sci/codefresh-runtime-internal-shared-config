@@ -21,7 +21,7 @@ spec:
     - name: PROMOTION_FLOW_NAME
     - name: RELEASE_URL
     - name: COMMIT_SHA
-    # - name: VERSION
+    # - name: VERSION 
   entrypoint: sn-open-cr-hook
   templates:
   - name: sn-open-cr-hook
@@ -51,7 +51,7 @@ spec:
               value: "debug"
             - name: CR_DATA
               value: >-
-                {"short_description": "Product {{ workflow.parameters.PRODUCT_NAME }} {{ workflow.parameters.VERSION }} deployment"
+                {"short_description": "Product {{ workflow.parameters.PRODUCT_NAME }} deployment"
                  "description": "We are using  the {{ workflow.parameters.PROMOTION_FLOW_NAME }} flow. See {{ workflow.parameters.RELEASE_URL }} for details",
                  "justification": "My app is awesome! Please deploy ASAP",
                  "cmdb_ci":"tomcat", "assignment_group":"a715cd759f2002002920bde8132e7018"
