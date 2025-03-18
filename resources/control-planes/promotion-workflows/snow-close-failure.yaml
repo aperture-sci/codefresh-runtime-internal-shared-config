@@ -14,7 +14,7 @@ metadata:
     description: 'promotion workflow template'
 
 spec:
-  serviceAccountName: cf-default-promotion-workflows-sa
+  serviceAccountName: promotion-template # cf-default-promotion-workflows-sa
   entrypoint: main
   arguments:
     parameters:
