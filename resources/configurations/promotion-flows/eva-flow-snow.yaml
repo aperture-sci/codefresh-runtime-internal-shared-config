@@ -16,7 +16,7 @@ spec:
         action: commit
         postAction: slack-notification
       hooks:
-        onStart: service-now-open-hook
         onSuccess: service-now-close-success
         onFail: service-now-close-failure
-      
+  hooks:
+    onStart: service-now-open-hook

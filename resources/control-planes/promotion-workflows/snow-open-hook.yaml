@@ -16,14 +16,18 @@ spec:
   serviceAccountName: cf-default-promotion-workflows-sa
   arguments:
     parameters:
-    - name: APP_NAME
+    - name: PRODUCT_NAME
+    - name: RELEASE_ID
+    - name: PROMOTION_FLOW_NAME
+    - name: RELEASE_URL
+    - name: COMMIT_SHA
+    - name: VERSION
   entrypoint: sn-open-cr-hook
   templates:
   - name: sn-open-cr-hook
     outputs:
       parameters:
       - name: CR_SYSID
-        # globalName: CR_SYSID
         valueFrom:
           expression: "tasks['create-sn-cr'].outputs.parameters['CR_SYSID']"
 
@@ -47,10 +51,10 @@ spec:
               value: "debug"
             - name: CR_DATA
               value: >-
-                {"short_description": "{{ workflow.parameters.APP_NAME }} deployment",
-                "description": "Change for build {{workflow.uid}}.\nThis change was created by the Codefresh GitOps promotion flow",
-                "justification": "My app is awesome! Please deploy ASAP",
-                "cmdb_ci":"tomcat", "assignment_group":"a715cd759f2002002920bde8132e7018"
+                {"short_description": "Product {{ workflow.parameters.PRODUCT_NAME }} {{ workflow.parameters.VERSION }} deployment"
+                 "description": "We are using  the {{ workflow.parameters.PROMOTION_FLOW_NAME }} flow. See {{ workflow.parameters.RELEASE_URL }} for details",
+                 "justification": "My app is awesome! Please deploy ASAP",
+                 "cmdb_ci":"tomcat", "assignment_group":"a715cd759f2002002920bde8132e7018"
                 }
 
         - name: wait
