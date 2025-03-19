@@ -86,7 +86,7 @@ spec:
       source: |
           export CR_NUMBER="{{inputs.parameters.CR_NUMBER}}"
           export CR_SYSID="{{inputs.parameters.CR_SYSID}}"
-          echo "{\"CR_NUMBER\": \"${CR_NUMBER}\",\n" > /tmp/promotion-context.txt
+          echo "{\"CR_NUMBER\": \"${CR_NUMBER}\"," > /tmp/promotion-context.txt
           echo "\"CR_SYSID\": \"${CR_SYSID}\"}" >> /tmp/promotion-context.txt
 
     outputs:
