@@ -18,14 +18,14 @@ spec:
   entrypoint: main
   arguments:
     parameters:
-    - name: APP_NAME
+    - name: PRODUCT_NAME
     - name: CR_SYSID
       value: ""
   templates:
   - name: main
     inputs:
       parameters:
-      - name: APP_NAME
+      - name: PRODUCT_NAME
       - name: CR_SYSID
     dag:
       tasks:
@@ -48,4 +48,4 @@ spec:
             - name: CR_CLOSE_CODE
               value: "unsuccessful"
             - name: CR_CLOSE_NOTES
-              value: "App {{ workflow.parameters.APP_NAME }} installation failed  so we close the Change Request with error."
+              value: "App {{ workflow.parameters.PRODUCT_NAME }} installation failed  so we close the Change Request with error."
