@@ -22,10 +22,24 @@ spec:
         preAction: pre-action
         postAction: post-action
         action: commit
-    - environment: prod-us
+    - environment: prod-asia
       dependsOn:
         - staging
         - qa
+      policy:
+        preAction: pre-action
+        postAction: post-action
+        action: commit
+    - environment: prod-eu
+      dependsOn:
+        - prod-asia
+      policy:
+        preAction: pre-action
+        postAction: post-action
+        action: commit
+    - environment: prod-us
+      dependsOn:
+        - prod-eu
       policy:
         preAction: pre-action
         postAction: post-action
