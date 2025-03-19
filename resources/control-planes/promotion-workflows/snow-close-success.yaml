@@ -20,13 +20,8 @@ spec:
     parameters:
     - name: APP_NAME
     - name: CR_SYSID
-      value: ""
   templates:
   - name: main
-    inputs:
-      parameters:
-      - name: PRODUCT_NAME
-      - name: CR_SYSID
     dag:
       tasks:
         - name: close-sn-cr
@@ -42,7 +37,7 @@ spec:
             - name: CR_DATA
               value: '{"work_notes":"this is a message for the work notes"}'
             - name: CR_SYSID
-              value: '{{ inputs.parameters.CR_SYSID }}'
+              value: '{{ workflow.parameters.CR_SYSID }}'
             - name: LOG_LEVEL
               value: info
             - name: CR_CLOSE_CODE
