@@ -31,4 +31,5 @@ spec:
         postAction: post-action
         action: commit
   hooks:
-    onStart: post-action
+    onStart: pre-action-hook
+    onSuccess: post-action-hook
