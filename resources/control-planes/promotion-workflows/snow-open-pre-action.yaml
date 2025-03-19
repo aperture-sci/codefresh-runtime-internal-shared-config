@@ -54,38 +54,8 @@ spec:
         - name: wait
           template: approve
           depends: create-sn-cr
-        - name: cf_export
-          depends: create-sn-cr
-          template: set-promotion-context
-          arguments:
-            parameters:
-            - name: CR_SYSID
-              value: '{{ tasks.create-sn-cr.outputs.parameters.CR_SYSID}}'
-            - name: CR_NUMBER
-              value: '{{ tasks.create-sn-cr.outputs.parameters.CR_NUMBER}}'
 
   # Additional templates
   - name: approve
     suspend: {}
       # duration: "72h"
-  - name: set-promotion-context
-    inputs:
-      parameters:
-        - name: CR_NUMBER
-        - name: CR_SYSID
-    outputs:
-      parameters:
-        - name: PROMOTION_CONTEXT
-          globalName: PROMOTION_CONTEXT
-          valueFrom:
-            path: /tmp/promotion-context.txt
-    script:
-      image: alpine
-      command:
-        - sh
-      source: |
-          export CR_NUMBER="{{inputs.parameters.CR_NUMBER}}"
-          export CR_NUMBER="{{inputs.parameters.CR_NUMBER}}"
-          echo "{\"CR_NUMBER\": \"${CR_NUMBER}\",\n" > /tmp/promotion-context.txt
-          echo "\"CR_SYSID\": \"${CR_SYSID}\"}" >> /tmp/promotion-context.txt
-          echo "$PROMOTION_CONTEXT" > /tmp/promotion-context.txt
