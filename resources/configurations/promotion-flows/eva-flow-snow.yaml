@@ -19,4 +19,4 @@ spec:
         onSuccess: service-now-close-success
         onFail: service-now-close-failure
   hooks:
-    onStart: service-now-open-hook
+    onStart: service-now-open-standard-hook
