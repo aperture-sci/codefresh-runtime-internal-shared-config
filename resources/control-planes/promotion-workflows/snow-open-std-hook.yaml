@@ -39,6 +39,10 @@ spec:
             template: createcr
           arguments:
             parameters:
+            - name: SN_IMAGE
+              value: 'docker.io/lrochette/argo-hub-servicenow-integration'
+            - name: SN_IMAGE_TAG
+              value: "1.4.0"
             - name: TOKEN
               value: cf-api-key-aperture
             - name: CF_RUNTIME
