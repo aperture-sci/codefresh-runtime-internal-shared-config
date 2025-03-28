@@ -28,7 +28,7 @@ gitops-runtime:
       ingress:
         className: nginx-public
         enabled: false
-      isConfigurationRuntime: true
+      isConfigurationRuntime: false
       name: high
   installer:
     skipValidation: false
