@@ -35,7 +35,7 @@ spec:
             - name: CR_SYSID
               value: '{{ workflow.parameters.CR_SYSID }}'
             - name: CR_DATA
-              value: {"state": "-2"}
+              value: '{"state": "-2"}'
 
         - name: sn-move-to-implement
           depends: sn-move-to-schedule
@@ -51,7 +51,7 @@ spec:
             - name: CR_SYSID
               value: '{{ workflow.parameters.CR_SYSID }}'
             - name: CR_DATA
-              value: {"state": "-1"}
+              value: '{"state": "-1"}'
 
 
         - name: sn-move-to-review
@@ -68,4 +68,4 @@ spec:
             - name: CR_SYSID
               value: '{{ workflow.parameters.CR_SYSID }}'
             - name: CR_DATA
-              value: {"state": "0"}
+              value: '{"state": "0"}'
