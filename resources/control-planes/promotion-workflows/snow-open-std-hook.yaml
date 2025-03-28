@@ -17,10 +17,10 @@ spec:
   arguments:
     parameters:
     - name: PRODUCT_NAME
-    - name: RELEASE_ID
-    - name: PROMOTION_FLOW_NAME
-    - name: RELEASE_URL
-    - name: COMMIT_SHA
+    # - name: RELEASE_ID
+    # - name: PROMOTION_FLOW_NAME
+    # - name: RELEASE_URL
+    # - name: COMMIT_SHA
     # - name: VERSION
   entrypoint: sn-open-cr-std-hook
   templates:
