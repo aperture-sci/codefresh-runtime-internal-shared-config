@@ -58,7 +58,8 @@ spec:
             - name: CR_DATA
               value: >-
                 {"short_description": "Product {{ workflow.parameters.PRODUCT_NAME }} deployment with pre-approved template",
-                 "justification": "My app is awesome! Please deploy ASAP"
+                 "justification": "My app is awesome! Please deploy ASAP",
+                 "assignment_group": "679434f053231300e321ddeeff7b12d8"
                 }
 
         - name: cf-export
