@@ -47,3 +47,4 @@ spec:
   hooks:
     onStart: pre-action-hook
     onSuccess: post-action-hook
+    onFail: slack-fail-sdlc-promotion-tests
