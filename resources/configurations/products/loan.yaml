@@ -1,4 +1,4 @@
-apiVersion: codefresh.io/v1beta1
+apiVersion: codefresh.io/v1beta2
 kind: Product
 metadata:
   name: loan
@@ -22,3 +22,4 @@ spec:
       values.yaml:
         jsonPaths:
           - $.loans.image.tag
+  concurrency: queue
