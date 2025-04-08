@@ -1,4 +1,4 @@
-apiVersion: codefresh.io/v1beta1
+apiVersion: codefresh.io/v1beta2
 kind: Product
 metadata:
   name: trio
@@ -39,3 +39,4 @@ spec:
           - $.buslog.image.tag
           - $.ctrlr.image.tag
           - $.flask-ui.image.tag
+  concurrency: queue
