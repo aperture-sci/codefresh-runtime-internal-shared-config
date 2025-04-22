@@ -1,45 +1,45 @@
-apiVersion: codefresh.io/v1beta1
-kind: PromotionFlow
-metadata:
-  name: unpacked
-  annotations:
-    description: ""
-spec:
-  triggerEnvironment: dev
-  steps:
-    - environment: staging
-      dependsOn:
-        - dev
-      policy:
-        action: commit
-        postAction: soak-test
-    - environment: qa
-      dependsOn:
-        - dev
-      policy:
-        action: commit
-        postAction: smoketests
-      hooks:
-        onFail: slack-notification
-    - environment: prod-us
-      dependsOn:
-        - staging
-        - qa
-      policy:
-        action: pr
-      hooks:
-        onStart: slack-notification
-        onSuccess: service-now-move-to-implement
-    - environment: prod-asia
-      dependsOn:
-        - staging
-      policy:
-        action: commit
-    - environment: prod-eu
-      dependsOn:
-        - staging
-      policy:
-        action: pr
-  hooks:
-    onStart: service-now-open-standard-hook
-    onSuccess: slack-notification
+# apiVersion: codefresh.io/v1beta1
+# kind: PromotionFlow
+# metadata:
+#   name: unpacked
+#   annotations:
+#     description: ""
+# spec:
+#   triggerEnvironment: dev
+#   steps:
+#     - environment: staging
+#       dependsOn:
+#         - dev
+#       policy:
+#         action: commit
+#         postAction: soak-test
+#     - environment: qa
+#       dependsOn:
+#         - dev
+#       policy:
+#         action: commit
+#         postAction: smoketests
+#       hooks:
+#         onFail: slack-notification
+#     - environment: prod-us
+#       dependsOn:
+#         - staging
+#         - qa
+#       policy:
+#         action: pr
+#       hooks:
+#         onStart: slack-notification
+#         onSuccess: service-now-move-to-implement
+#     - environment: prod-asia
+#       dependsOn:
+#         - staging
+#       policy:
+#         action: commit
+#     - environment: prod-eu
+#       dependsOn:
+#         - staging
+#       policy:
+#         action: pr
+#   hooks:
+#     onStart: service-now-open-standard-hook
+#     onSuccess: slack-notification
