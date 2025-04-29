@@ -31,10 +31,7 @@ spec:
           arguments:
             parameters:
             - name: SN_INSTANCE
-              valueFrom:
-                secretKeyRef:
-                  name: sn-auth
-                  key: url
+              value: 'https://dev220990.service-now.com'
             - name: SN_AUTH
               value: "sn-auth"
             - name: CR_DATA

@@ -48,7 +48,7 @@ spec:
             - name: CF_RUNTIME
               value: demo
             - name: SN_INSTANCE
-              value: 'https://dev274191.service-now.com'
+              value: 'https://dev220990.service-now.com'
             - name: SN_AUTH
               value: "sn-auth"
             - name: LOG_LEVEL
