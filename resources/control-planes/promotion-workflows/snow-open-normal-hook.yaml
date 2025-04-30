@@ -6,7 +6,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: service-now-open-hook
+  name: service-now-open-normal-hook
   annotations:
     codefresh.io/workflow-origin: promotion
     codefresh.io/promotion-stage: pre-action
