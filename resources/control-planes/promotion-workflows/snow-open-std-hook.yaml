@@ -13,7 +13,7 @@ metadata:
     version: 0.0.1
     description: 'promotion workflow template'
 spec:
-  serviceAccountName: promotion-template # pcf-default-promotion-workflows-sa
+  serviceAccountName: cf-default-promotion-workflows-sa
   arguments:
     parameters:
     - name: PRODUCT_NAME
