@@ -13,15 +13,12 @@ metadata:
     version: 0.0.1
     description: 'promotion workflow template'
 spec:
-  serviceAccountName: promotion-template # pcf-default-promotion-workflows-sa
+  serviceAccountName: cf-default-promotion-workflows-sa
   arguments:
     parameters:
+    # all the following are
     - name: PRODUCT_NAME
-    - name: RELEASE_ID
     - name: PROMOTION_FLOW_NAME
-    - name: RELEASE_URL
-    - name: COMMIT_SHA
-    # - name: VERSION
   entrypoint: sn-open-cr-hook
   templates:
   - name: sn-open-cr-hook
