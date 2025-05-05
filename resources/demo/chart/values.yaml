@@ -15,41 +15,31 @@ gitops-runtime:
         requests:
           cpu: '0.3'
           memory: 400Mi
-  garage-workflows-artifact-storage:
-    enabled: true
-    persistence:
-      # -- Volume that stores artifacts and logs for workflows
-      data:
-        # -- When empty value empty the default storage class for the cluster will be used
-        storageClass: ""
-        size: 2Gi
-  # argo-workflows:
-  #   artifactRepository:
-  #     archiveLogs: true
-  #     s3:
-  #       accessKeySecret: {}
-  #       bucket: aperturedevops
-  #       endpoint: s3.amazonaws.com
-  #       insecure: false
-  #       region: us-east-1
-  #       roleARN: arn:aws:iam::336151728602:role/codefresh_s3
-  #       secretKeySecret: {}
-  #   controller:
-  #     workflowDefaults:
-  #       spec:
-  #         serviceAccountName: workflows-default
-  #   server:
-  #     serviceAccount:
-  #       annotations:
-  #         eks.amazonaws.com/role-arn: arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev
-  #   useDefaultArtifactRepo: true
-  #   useStaticCredentials: false
-  #   workflow:
-  #     serviceAccount:
-  #       annotations:
-  #         eks.amazonaws.com/role-arn: arn:aws:iam::336151728602:role/argo-workflows-kubecon-dev
-  #       create: true
-  #       name: workflows-default
+
+argo-workflows:
+  controller:
+    workflowDefaults:
+      spec:
+        archiveLogs: true
+        artifactRepositoryRef:
+          configMap: codefresh-workflows-log-store
+          key: codefresh-workflows-log-store
+  artifactRepositoryRef:
+    codefresh-workflows-log-store:
+      archiveLogs: true
+      codefresh-workflows-log-store:
+        s3:
+          bucket: 641dfab29939b208915c0d4e
+          endpoint: gitops-workflow-logs.codefresh.io
+          insecure: false
+          keyFormat: demo/{{workflow.name}}/{{pod.name}}
+          accessKeySecret:
+            name: codefresh-token
+            key: token
+          secretKeySecret:
+            name: codefresh-token
+            key: token
+
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
