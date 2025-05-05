@@ -15,8 +15,6 @@ gitops-runtime:
         requests:
           cpu: '0.3'
           memory: 400Mi
-  garage-workflows-artifact-storage:
-    enabled: true
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
@@ -32,3 +30,27 @@ gitops-runtime:
       name: high
   installer:
     skipValidation: false
+
+  argo-workflows:
+    controller:
+      workflowDefaults:
+        spec:
+          archiveLogs: true
+          artifactRepositoryRef:
+            configMap: codefresh-workflows-log-store
+            key: codefresh-workflows-log-store
+    artifactRepositoryRef:
+      codefresh-workflows-log-store:
+        archiveLogs: true
+        codefresh-workflows-log-store:
+          s3:
+            bucket: 641dfab29939b208915c0d4e
+            endpoint: gitops-workflow-logs.codefresh.io
+            insecure: false
+            keyFormat: high/{{workflow.name}}/{{pod.name}}
+            accessKeySecret:
+              name: codefresh-token
+              key: token
+            secretKeySecret:
+              name: codefresh-token
+              key: token
