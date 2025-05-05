@@ -10,6 +10,8 @@ spec:
     - environment: staging
       dependsOn:
         - dev
+      policy:
+        postAction: slack-notification
     - environment: prod-us
       dependsOn:
         - staging
