@@ -15,6 +15,21 @@ gitops-runtime:
         requests:
           cpu: '0.3'
           memory: 400Mi
+  global:
+    codefresh:
+      accountId: 641dfab29939b208915c0d4e
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      ingress:
+        className: nginx-public
+        enabled: false
+      isConfigurationRuntime: true
+      name: demo
+  installer:
+    skipValidation: true
 
 argo-workflows:
   controller:
@@ -39,19 +54,3 @@ argo-workflows:
           secretKeySecret:
             name: codefresh-token
             key: token
-
-  global:
-    codefresh:
-      accountId: 641dfab29939b208915c0d4e
-      userToken:
-        secretKeyRef:
-          name: codefresh-user-token
-          key: token
-    runtime:
-      ingress:
-        className: nginx-public
-        enabled: false
-      isConfigurationRuntime: true
-      name: demo
-  installer:
-    skipValidation: false
