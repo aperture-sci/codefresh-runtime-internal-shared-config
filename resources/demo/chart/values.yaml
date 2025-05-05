@@ -31,26 +31,26 @@ gitops-runtime:
   installer:
     skipValidation: true
 
-argo-workflows:
-  controller:
-    workflowDefaults:
-      spec:
-        archiveLogs: true
-        artifactRepositoryRef:
-          configMap: codefresh-workflows-log-store
-          key: codefresh-workflows-log-store
-  artifactRepositoryRef:
-    codefresh-workflows-log-store:
-      archiveLogs: true
+  argo-workflows:
+    controller:
+      workflowDefaults:
+        spec:
+          archiveLogs: true
+          artifactRepositoryRef:
+            configMap: codefresh-workflows-log-store
+            key: codefresh-workflows-log-store
+    artifactRepositoryRef:
       codefresh-workflows-log-store:
-        s3:
-          bucket: 641dfab29939b208915c0d4e
-          endpoint: gitops-workflow-logs.codefresh.io
-          insecure: false
-          keyFormat: demo/{{workflow.name}}/{{pod.name}}
-          accessKeySecret:
-            name: codefresh-token
-            key: token
-          secretKeySecret:
-            name: codefresh-token
-            key: token
+        archiveLogs: true
+        codefresh-workflows-log-store:
+          s3:
+            bucket: 641dfab29939b208915c0d4e
+            endpoint: gitops-workflow-logs.codefresh.io
+            insecure: false
+            keyFormat: demo/{{workflow.name}}/{{pod.name}}
+            accessKeySecret:
+              name: codefresh-token
+              key: token
+            secretKeySecret:
+              name: codefresh-token
+              key: token
