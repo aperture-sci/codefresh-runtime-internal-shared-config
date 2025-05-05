@@ -1,14 +1,15 @@
 apiVersion: codefresh.io/v1beta1
 kind: PromotionFlow
 metadata:
-  name: test
+  name: blog-test
   annotations:
     description: ""
 spec:
   triggerEnvironment: dev
   steps:
-    - environment: staging
+    - environment: qa
       dependsOn:
         - dev
       policy:
-        postAction: slack-notification
+        action: commit
+        postAction: blog-echo
