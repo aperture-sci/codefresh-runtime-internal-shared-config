@@ -47,7 +47,7 @@ gitops-runtime:
             bucket: 641dfab29939b208915c0d4e
             endpoint: gitops-workflow-logs.codefresh.io
             insecure: false
-            keyFormat: demo/{{workflow.name}}/{{pod.name}}
+            keyFormat: 'demo/{{workflow.name}}/{{pod.name}}'
             accessKeySecret:
               name: codefresh-token
               key: token
