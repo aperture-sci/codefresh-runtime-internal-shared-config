@@ -5,7 +5,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: blog-echo
+  name: demo1
   annotations:
     codefresh.io/workflow-origin: promotion
     version: 0.0.1
@@ -24,6 +24,7 @@ metadata:
     argo-hub/icon_url: >-
       https://cdn.jsdelivr.net/gh/codefresh-io/argo-hub@main/examples/post-promotion-starter/assets/icon.svg
     argo-hub/icon_background: '#f4f4f4'
+    description: This is a workflow for a demo
 spec:
   arguments:
     parameters:
