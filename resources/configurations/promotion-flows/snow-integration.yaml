@@ -16,6 +16,6 @@ spec:
         preAction: slack-notification
         postAction: smoketests
       hooks:
-        onStart: service-now-open-standard-hook
+        onStart: service-now-open-normal-hook
         onSuccess: service-now-close-success
         onFail: service-now-close-failure
