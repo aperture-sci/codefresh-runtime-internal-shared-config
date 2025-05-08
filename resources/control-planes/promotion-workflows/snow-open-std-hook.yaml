@@ -53,7 +53,7 @@ spec:
             - name: SN_AUTH
               value: "sn-auth"
             - name: LOG_LEVEL
-              value: "info"
+              value: "debug"
             # - name: STD_CR_TEMPLATE
             #   # value: "Reboot Windows Server"
             #   value: ""
