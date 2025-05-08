@@ -42,11 +42,11 @@ spec:
               value: demo
             - name: SN_INSTANCE
               #value: 'https://dev220990.service-now.com'
-              value: 'https://dev204449.service-now.com/'
+              value: 'https://dev204449.service-now.com'
             - name: SN_AUTH
               value: "sn-auth"
             - name: LOG_LEVEL
-              value: "info"
+              value: "debug"
             - name: CR_DATA
               value: >-
                 {"short_description": "Product {{ workflow.parameters.PRODUCT_NAME }} deployment",
