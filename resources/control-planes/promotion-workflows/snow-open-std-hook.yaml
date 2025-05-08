@@ -54,7 +54,8 @@ spec:
             - name: LOG_LEVEL
               value: "info"
             - name: STD_CR_TEMPLATE
-              value: "Reboot Windows Server"
+              # value: "Reboot Windows Server"
+              value: ""
             - name: CR_DATA
               value: >-
                 {"short_description": "Product {{ workflow.parameters.PRODUCT_NAME }} deployment with pre-approved template",
