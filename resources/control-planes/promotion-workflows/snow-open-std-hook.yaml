@@ -54,9 +54,8 @@ spec:
               value: "sn-auth"
             - name: LOG_LEVEL
               value: "debug"
-            # - name: STD_CR_TEMPLATE
-            #   # value: "Reboot Windows Server"
-            #   value: ""
+            - name: STD_CR_TEMPLATE
+              value: "Reboot Windows Server"
             - name: CR_DATA
               value: >-
                 {"short_description": "Product {{ workflow.parameters.PRODUCT_NAME }} deployment with pre-approved template",
