@@ -31,7 +31,7 @@ spec:
           arguments:
             parameters:
             - name: SN_INSTANCE
-              value: 'https://dev220990.service-now.com'
+              value: 'https://dev286098.service-now.com'
             - name: SN_AUTH
               value: "sn-auth"
             - name: CR_DATA
