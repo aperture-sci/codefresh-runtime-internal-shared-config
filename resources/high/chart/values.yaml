@@ -2,6 +2,11 @@ gitops-runtime:
   cf-argocd-extras:
     enabled: true
   argo-cd:
+    controller:
+      metrics:
+        enabled: true
+        serviceMonitor:
+          enabled: true
     configs:
       cm:
         application.resourceTrackingMethod: "annotation+label"
