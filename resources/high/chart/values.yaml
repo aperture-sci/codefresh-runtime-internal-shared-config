@@ -21,7 +21,7 @@ gitops-runtime:
       metrics:
         enabled: true
         serviceMonitor:
-          enabled: true       
+          enabled: true
     applicationSet:
       metrics:
         enabled: true
@@ -30,11 +30,11 @@ gitops-runtime:
     configs:
       cm:
         application.resourceTrackingMethod: "annotation+label"
-      params:
-        controller.metrics.applicationLabels.enabled: true
-        controller.metrics.enabled: true
-        server.metrics.enabled: true
-        server.metrics.serviceMonitor.enabled: true
+      # params:
+      #   controller.metrics.applicationLabels.enabled: true
+      #   controller.metrics.enabled: true
+      #   server.metrics.enabled: true
+      #   server.metrics.serviceMonitor.enabled: true
     acrController:
       enabled: true
     eventReporter:
