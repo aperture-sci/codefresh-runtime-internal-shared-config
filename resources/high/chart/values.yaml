@@ -2,31 +2,36 @@ gitops-runtime:
   cf-argocd-extras:
     enabled: true
   argo-cd:
-    controller:
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
-    dex:
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
     server:
+      extraArgs:
+      - --metrics-application-conditions
       metrics:
         enabled: true
         serviceMonitor:
           enabled: true
-    repoServer:
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
-    applicationSet:
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
+          selector:
+            release: prometheus-stack
+    # controller:
+    #   metrics:
+    #     enabled: true
+    #     serviceMonitor:
+    #       enabled: true
+    # dex:
+    #   metrics:
+    #     enabled: true
+    #     serviceMonitor:
+    #       enabled: true
+    #
+    # repoServer:
+    #   metrics:
+    #     enabled: true
+    #     serviceMonitor:
+    #       enabled: true
+    # applicationSet:
+    #   metrics:
+    #     enabled: true
+    #     serviceMonitor:
+    #       enabled: true
     configs:
       cm:
         application.resourceTrackingMethod: "annotation+label"
