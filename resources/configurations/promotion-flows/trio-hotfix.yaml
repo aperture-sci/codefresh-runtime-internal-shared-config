@@ -14,8 +14,3 @@ spec:
       policy:
         action: pr
         postAction: smoketests
-    - environment: staging
-      dependsOn:
-        - prod-us
-      policy:
-        action: commit
