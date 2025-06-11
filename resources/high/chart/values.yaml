@@ -10,7 +10,7 @@ gitops-runtime:
         serviceMonitor:
           enabled: true
           selector:
-            release: kube-prometheus-stack
+            release: prometheus-stack
 
     # controller:
     #   metrics:
