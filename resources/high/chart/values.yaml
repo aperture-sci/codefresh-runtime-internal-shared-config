@@ -2,6 +2,9 @@ gitops-runtime:
   cf-argocd-extras:
     enabled: true
   argo-cd:
+    configs:
+      cm:
+        application.resourceTrackingMethod: "annotation+label"
     server:
       extraArgs:
       - --metrics-application-conditions
@@ -10,7 +13,9 @@ gitops-runtime:
         serviceMonitor:
           enabled: true
           selector:
-            release: prometheus-stack
+            app: kube-prometheus-stack-operator
+            # release: prometheus-stack
+          namespace: "monitoring"
 
     # controller:
     #   metrics:
@@ -33,9 +38,6 @@ gitops-runtime:
     #     enabled: true
     #     serviceMonitor:
     #       enabled: true
-    configs:
-      cm:
-        application.resourceTrackingMethod: "annotation+label"
       # params:
       #   controller.metrics.applicationLabels.enabled: true
       #   controller.metrics.enabled: true
