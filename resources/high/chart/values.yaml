@@ -8,16 +8,16 @@ gitops-runtime:
       cm:
         application.resourceTrackingMethod: "annotation+label"
     server:
-      extraArgs:
-      - --metrics-application-conditions
+      # extraArgs:
+      # - --metrics-application-conditions
       metrics:
         enabled: true
-        serviceMonitor:
-          enabled: true
-          selector:
-            app: kube-prometheus-stack-operator
-            # release: prometheus-stack
-          namespace: "monitoring"
+        # serviceMonitor:
+        #   enabled: true
+        #   selector:
+        #     app: kube-prometheus-stack-operator
+        #     # release: prometheus-stack
+        #   namespace: "monitoring"
     applicationSet:
       metrics:
         enabled: true
