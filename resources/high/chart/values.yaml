@@ -18,6 +18,15 @@ gitops-runtime:
             app: kube-prometheus-stack-operator
             # release: prometheus-stack
           namespace: "monitoring"
+        applicationSet:
+          metrics:
+            enabled: true
+        controller:
+          metrics:
+            enabled: true
+        repoServer:
+          metrics:
+            enabled: true
 
     # controller:
     #   metrics:
