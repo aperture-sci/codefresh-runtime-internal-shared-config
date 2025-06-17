@@ -18,42 +18,15 @@ gitops-runtime:
             app: kube-prometheus-stack-operator
             # release: prometheus-stack
           namespace: "monitoring"
-        applicationSet:
-          metrics:
-            enabled: true
-        controller:
-          metrics:
-            enabled: true
-        repoServer:
-          metrics:
-            enabled: true
-
-    # controller:
-    #   metrics:
-    #     enabled: true
-    #     serviceMonitor:
-    #       enabled: true
-    # dex:
-    #   metrics:
-    #     enabled: true
-    #     serviceMonitor:
-    #       enabled: true
-    #
-    # repoServer:
-    #   metrics:
-    #     enabled: true
-    #     serviceMonitor:
-    #       enabled: true
-    # applicationSet:
-    #   metrics:
-    #     enabled: true
-    #     serviceMonitor:
-    #       enabled: true
-      # params:
-      #   controller.metrics.applicationLabels.enabled: true
-      #   controller.metrics.enabled: true
-      #   server.metrics.enabled: true
-      #   server.metrics.serviceMonitor.enabled: true
+    applicationSet:
+      metrics:
+        enabled: true
+    controller:
+      metrics:
+        enabled: true
+    repoServer:
+      metrics:
+        enabled: true
     acrController:
       enabled: true
     eventReporter:
