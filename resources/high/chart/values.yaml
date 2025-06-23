@@ -4,12 +4,12 @@ gitops-runtime:
   argo-cd:
     apiVersionOverrides:
       monitoring.coreos.com: v1
-    notifications:
-      enabled: true
-        notifiers:
-          service.grafana: |
-            apiURL: https://grafana-prod.cs.sandbox.codefresh.io/api
-            apiKey: $grafana-api-key
+    # notifications:
+    #   enabled: true
+    #     notifiers:
+    #       service.grafana: |
+    #         apiURL: https://grafana-prod.cs.sandbox.codefresh.io/api
+    #         apiKey: $grafana-api-key
     configs:
       cm:
         application.resourceTrackingMethod: "annotation+label"
