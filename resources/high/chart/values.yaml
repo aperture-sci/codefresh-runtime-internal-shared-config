@@ -2,6 +2,8 @@ gitops-runtime:
   cf-argocd-extras:
     enabled: true
   argo-cd:
+    notifications:
+      enabled: true
     apiVersionOverrides:
       monitoring.coreos.com: v1
     configs:
