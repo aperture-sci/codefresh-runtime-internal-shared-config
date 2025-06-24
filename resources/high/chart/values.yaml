@@ -1,6 +1,31 @@
 gitops-runtime:
   cf-argocd-extras:
     enabled: true
+  argo-cd:
+    notifications:
+      enabled: true
+      cm:
+        create: true
+        name: argocd-notifications-cm
+      secret:
+        create: false
+      metrics:
+      # -- Enables prometheus metrics server
+        enabled: true
+      notifiers:
+        service.grafana: |
+          apiURL: https://grafana-prod.cs.sandbox.codefresh.io/api
+          apiKey: $grafana-api-key
+        service.slack: |
+          token: $slack-token
+      triggers:
+        trigger.on-sync-succeeded: |
+          - description: Application syncing has succeeded
+            oncePer: app.status.operationState?.syncResult?.revision
+            send:
+            - app-sync-succeeded
+            when: app.status.operationState != nil and app.status.operationState.phase in ['Succeeded']
+
     apiVersionOverrides:
       monitoring.coreos.com: v1
     configs:
@@ -72,28 +97,3 @@ gitops-runtime:
             secretKeySecret:
               name: codefresh-token
               key: token
-
-  argo-cd:
-    notifications:
-      enabled: true
-      cm:
-        create: true
-        name: argocd-notifications-cm
-      secret:
-        create: false
-      metrics:
-      # -- Enables prometheus metrics server
-        enabled: true
-      notifiers:
-        service.grafana: |
-          apiURL: https://grafana-prod.cs.sandbox.codefresh.io/api
-          apiKey: $grafana-api-key
-        service.slack: |
-          token: $slack-token
-      triggers:
-        trigger.on-sync-succeeded: |
-          - description: Application syncing has succeeded
-            oncePer: app.status.operationState?.syncResult?.revision
-            send:
-            - app-sync-succeeded
-            when: app.status.operationState != nil and app.status.operationState.phase in ['Succeeded']
