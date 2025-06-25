@@ -28,10 +28,6 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          grafana:
-            title: "app sync ok"
-            text: "Sync operation succeeded for application {{.app.metadata.name}} at revision {{.app.status.sync.revision}}."
-            tags: ["argo", "sync"]
           slack:
             attachments: |
               [{
