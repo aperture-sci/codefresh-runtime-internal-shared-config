@@ -28,7 +28,7 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          grafana: {{.app.metadata.name}} synced for grafana3
+          grafana: {{.app.metadata.name}} synced for grafana 5
 
     apiVersionOverrides:
       monitoring.coreos.com: v1
