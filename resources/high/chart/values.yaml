@@ -28,6 +28,13 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
+          message: |
+            {
+              "dashboardUid": "LCAgc9rWz",
+              "tags": ["argo", "{{.app.metadata.name}}", "{{.app.status.sync.status}}"],
+              "text": "Argo CD synced {{.app.metadata.name}} to {{.app.status.sync.status}}",
+              "time": {{.app.status.operationState.finishedAt | toEpoch }}
+            }
           slack:
             attachments: |
               [{
