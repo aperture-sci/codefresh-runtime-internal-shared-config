@@ -23,7 +23,14 @@ gitops-runtime:
           - description: Application syncing has succeeded
             oncePer: app.status.operationState?.syncResult?.revision
             when: app.status.operationState != nil and app.status.operationState.phase in ['Succeeded']
-
+            send:
+            - app-synced
+      templates:
+        template.app-synced: |
+          grafana:
+            title: "app sync ok"
+            text: "Sync operation succeeded for application {{.app.metadata.name}} at revision {{.app.status.sync.revision}}."
+            tags: ["argo", "sync"]
     apiVersionOverrides:
       monitoring.coreos.com: v1
     configs:
