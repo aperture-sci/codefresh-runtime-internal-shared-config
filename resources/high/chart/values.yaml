@@ -4,6 +4,7 @@ gitops-runtime:
   argo-cd:
     notifications:
       enabled: true
+      logLevel: "debug"
       cm:
         create: true
         name: argocd-notifications-cm
