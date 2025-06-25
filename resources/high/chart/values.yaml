@@ -28,7 +28,7 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          message: |
+          grafana: |
             {
               "dashboardUid": "LCAgc9rWz",
               "tags": ["argo", "{{.app.metadata.name}}", "{{.app.status.sync.status}}"],
