@@ -29,8 +29,7 @@ gitops-runtime:
       templates:
         template.app-synced: |
           grafana:
-            text: "{{.app.metadata.name}} synced for grafana2"
-            tags: ["argo", "sync"]
+            text: {{.app.metadata.name}} synced for grafana2
 
     apiVersionOverrides:
       monitoring.coreos.com: v1
