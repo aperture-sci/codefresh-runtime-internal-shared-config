@@ -17,8 +17,8 @@ gitops-runtime:
         service.grafana: |
           apiURL: https://grafana-prod.cs.sandbox.codefresh.io/api
           apiKey: $grafana-api-key
-        service.slack: |
-          token: $slack-token
+        # service.slack: |
+        #   token: $slack-token
       triggers:
         trigger.on-sync-succeeded: |
           - description: Application syncing has succeeded
@@ -28,8 +28,7 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          grafana:
-            message: "{{.app.metadata.name}} synced for grafana2"
+          message: "{{.app.metadata.name}} synced for grafana2"
 
     apiVersionOverrides:
       monitoring.coreos.com: v1
