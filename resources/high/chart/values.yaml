@@ -28,42 +28,7 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          grafana: |
-            {
-              "dashboardUid": "LCAgc9rWz",
-              "tags": ["argo", "{{.app.metadata.name}}", "{{.app.status.sync.status}}"],
-              "text": "Argo CD synced {{.app.metadata.name}} to {{.app.status.sync.status}}"
-            }
-          slack:
-            attachments: |
-              [{
-                "title": "{{ .app.metadata.name}}",
-                "title_link":"{{.context.argocdUrl}}/applications/{{.app.metadata.name}}",
-                "color": "#18be52",
-                "fields": [
-                {
-                  "title": "Sync Status",
-                  "value": "{{.app.status.sync.status}}",
-                  "short": true
-                },
-                {
-                  "title": {{- if .app.spec.source }} "Repository" {{- else if .app.spec.sources }} "Repositories" {{- end }},
-                  "value": {{- if .app.spec.source }} ":arrow_heading_up: {{ .app.spec.source.repoURL }}" {{- else if .app.spec.sources }} "{{- range $index, $source := .app.spec.sources }}{{ if $index }}\n{{ end }}:arrow_heading_up: {{ $source.repoURL }}{{- end }}" {{- end }},
-                  "short": true
-                }
-                {{range $index, $c := .app.status.conditions}}
-                ,
-                {
-                  "title": "{{$c.type}}",
-                  "value": "{{$c.message}}",
-                  "short": true
-                }
-                {{end}}
-                ]
-              }]
-            deliveryPolicy: Post
-            groupingKey: ""
-            notifyBroadcast: false
+          message: "{{.app.metadata.name}}"
 
     apiVersionOverrides:
       monitoring.coreos.com: v1
