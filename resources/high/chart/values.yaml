@@ -28,7 +28,7 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          message: "{{.app.metadata.name}}"
+          grafana: "{{.app.metadata.name}} for gr only"
 
     apiVersionOverrides:
       monitoring.coreos.com: v1
