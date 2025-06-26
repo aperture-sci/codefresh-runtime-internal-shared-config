@@ -17,8 +17,8 @@ gitops-runtime:
         service.grafana: |
           apiURL: https://grafana-prod.cs.sandbox.codefresh.io/api
           apiKey: $grafana-api-key
-        # service.slack: |
-        #   token: $slack-token
+        service.slack: |
+          token: $slack-token
       triggers:
 
         trigger.on-sync-succeeded: |
