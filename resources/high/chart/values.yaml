@@ -29,7 +29,7 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          message: {{.app.metadata.name}} synced
+          message: "{{.app.metadata.name}} synced"
 
     apiVersionOverrides:
       monitoring.coreos.com: v1
