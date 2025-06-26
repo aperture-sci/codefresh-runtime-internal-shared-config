@@ -20,15 +20,14 @@ gitops-runtime:
         service.slack: |
           token: $slack-token
       triggers:
-
         trigger.on-sync-succeeded: |
           - description: Application syncing has succeeded
             oncePer: app.status.operationState?.syncResult?.revision
             when: app.status.operationState != nil and app.status.operationState.phase in ['Succeeded']
             send:
-            - app-synced
+            - on-sync-succeeded
       templates:
-        template.app-synced: |
+        template.on-sync-succeeded: |
           message: "{{.app.metadata.name}} synced"
 
     apiVersionOverrides:
