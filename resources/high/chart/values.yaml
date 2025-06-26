@@ -20,6 +20,7 @@ gitops-runtime:
         # service.slack: |
         #   token: $slack-token
       triggers:
+
         trigger.on-sync-succeeded: |
           - description: Application syncing has succeeded
             oncePer: app.status.operationState?.syncResult?.revision
@@ -28,7 +29,8 @@ gitops-runtime:
             - app-synced
       templates:
         template.app-synced: |
-          grafana: {{.app.metadata.name}} synced for grafana 5
+          message: {{.app.metadata.name}} synced for grafana 6
+          grafana: {}
 
     apiVersionOverrides:
       monitoring.coreos.com: v1
