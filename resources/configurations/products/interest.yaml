@@ -7,6 +7,7 @@ spec:
   # Do not set promotion flow so we can promote manually
   #
 
+#  promotionTemplateRef: loan-app-template
   promotionTemplate:
     versionSource:
       file: Chart.yaml

@@ -10,7 +10,8 @@ spec:
           operator: In
           values:
             - '*[promotion:sequential-orders]*'
-  # promotionTemplateRef: promotion-config-orders
+
+#  promotionTemplateRef: loan-app-template
   promotionTemplate:
     versionSource:
       file: Chart.yaml

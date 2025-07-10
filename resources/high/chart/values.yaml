@@ -35,6 +35,8 @@ gitops-runtime:
     configs:
       cm:
         application.resourceTrackingMethod: "annotation+label"
+      params:
+        applicationsetcontroller.enable.github.api.metrics: "true"
 
     server:
       metrics:

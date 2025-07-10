@@ -11,6 +11,7 @@ spec:
           values:
             - '[promotion-sequential-loan]'
             - '* [promotion-sequential-loan] *'
+#  promotionTemplateRef: loan-app-template
   promotionTemplate:
     versionSource:
       file: Chart.yaml
