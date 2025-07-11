@@ -11,15 +11,15 @@ spec:
   #         values:
   #           - '[promotion-sequential-membership]'
 
-#  promotionTemplateRef: loan-app-template
-  promotionTemplate:
-    versionSource:
-      file: Chart.yaml
-      jsonPath: $.appVersion
-    promotion:
-      Chart.yaml:
-        jsonPaths:
-        - $.appVersion
-      values.yaml:
-        jsonPaths:
-        - $.loans.image.tag
+  promotionTemplateRef: loan-app-template
+  # promotionTemplate:
+  #   versionSource:
+  #     file: Chart.yaml
+  #     jsonPath: $.appVersion
+  #   promotion:
+  #     Chart.yaml:
+  #       jsonPaths:
+  #       - $.appVersion
+  #     values.yaml:
+  #       jsonPaths:
+  #       - $.loans.image.tag
