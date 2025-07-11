@@ -1,4 +1,7 @@
 gitops-runtime:
+  gitops-operator:
+    env: 
+      PROMOTION_WRAPPER_TEMPLATE: promotion-wrapper-old-workflows
   cf-argocd-extras:
     enabled: true
   argo-cd:
