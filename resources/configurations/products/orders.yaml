@@ -4,7 +4,7 @@ metadata:
   name: orders
 spec:
   promotionFlows:
-    - name: sequential-orders
+    - name: loan-full-promotion
       gitTriggerSelectors:
         - key: commitMessage
           operator: In

@@ -4,7 +4,7 @@ metadata:
   name: accounts
 spec:
   promotionFlows:
-    - name: sequential-accounts
+    - name: loan-full-promotion
       gitTriggerSelectors:
         - key: commitMessage
           operator: In
