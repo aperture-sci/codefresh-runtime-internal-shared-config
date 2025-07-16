@@ -25,20 +25,22 @@ spec:
             arguments:
               parameters:
               - name: JIRA_API_KEY
-                value: jira-token
+                value: 'jira-token'
               - name: JIRA_API_KEY_SECRET_KEY
                 value: token
               - name: JIRA_BASE_URL
                 value: 'https://codefresh-io.atlassian.net'
               - name: JIRA_USERNAME
-                value: jira-token
+                value: 'jira-token'
               - name: JIRA_USERNAME_SECRET_KEY
                 value: email
               - name: ISSUE_PROJECT
                 value: 'AP'
               - name: ISSUE_SUMMARY
-                value: 'Trio deployment'
+                value: 'Trio deployment permission'
               - name: ISSUE_DESCRIPTION
-                value: 'fix migration and current db state'
+                value: 'request to approve deployment'
+              - name: ISSUE_COMPONENTS
+                value: 'deployment'
               - name: ISSUE_TYPE
                 value: 'Task'
