@@ -5,6 +5,8 @@ gitops-runtime:
       PROMOTION_WRAPPER_TEMPLATE: promotion-wrapper-old-workflows
   cf-argocd-extras:
     enabled: true
+  argo-rollouts:
+    enabled: false
   argo-cd:
     acrController:
       enabled: true
