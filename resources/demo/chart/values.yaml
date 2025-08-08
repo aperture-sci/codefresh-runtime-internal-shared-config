@@ -35,6 +35,15 @@ gitops-runtime:
   installer:
     skipValidation: true
 
+  argo-cd:
+    configs:
+      cm:
+        timeout.reconciliation: 2m
+    repoServer:
+      env:
+        - name: ARGOCD_EXEC_TIMEOUT
+          value: "5m"
+
   argo-workflows:
     controller:
       workflowDefaults:
