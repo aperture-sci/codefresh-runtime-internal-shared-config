@@ -23,10 +23,6 @@ spec:
   entrypoint: echo
   templates:
     - name: echo
-      inputs:
-        parameters:
-          - name: environment-label
-            value: "{{workflow.labels.environment}}"
       script:
         image: alpine
         command:
@@ -35,7 +31,8 @@ spec:
           echo "syncing {{workflow.parameters.APP_NAME}}"
           echo "something else"
           echo "{{workflow.labels.environment}}"
-        #   echo "codefresh.io/release 1": {{workflow.labels['codefresh.io/release']}}
+          echo "codefresh.io/release 1"
+          "{{workflow.labels."codefresh\.io/release"}}"
         #   echo "codefresh.io/release 1"
         #   echo "{{workflow.labels."codefresh\.io\/release"}}"
         #   echo "codefresh.io/release 2"
