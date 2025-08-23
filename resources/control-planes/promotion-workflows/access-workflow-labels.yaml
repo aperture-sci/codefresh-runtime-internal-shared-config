@@ -29,5 +29,5 @@ spec:
         source: |
           echo "syncing {{workflow.parameters.APP_NAME}}"
           echo "something else"
-          echo "{{workflow.labels.environment}}""
+          echo "{{workflow.labels.environment}}"
           
