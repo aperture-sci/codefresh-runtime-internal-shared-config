@@ -22,6 +22,10 @@ spec:
   entrypoint: echo
   templates:
     - name: echo
+      inputs:
+        parameters:
+          - name: environment-label
+            value: "{{workflow.labels.environment}}"
       script:
         image: alpine
         command:
@@ -30,4 +34,6 @@ spec:
           echo "syncing {{workflow.parameters.APP_NAME}}"
           echo "something else"
           echo "{{workflow.labels.environment}}"
+          echo "something else 2"
+          echo "{{inputs.parameters.environment-label}}"
           
