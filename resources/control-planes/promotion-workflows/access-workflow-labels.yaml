@@ -14,6 +14,7 @@ metadata:
     description: Workflow to access the values in the Workflow labels
   labels:
     environment: production
+    codefresh.io/release: 123abc
 spec:
   arguments:
     parameters:
@@ -34,6 +35,12 @@ spec:
           echo "syncing {{workflow.parameters.APP_NAME}}"
           echo "something else"
           echo "{{workflow.labels.environment}}"
-          echo "something else 2"
-          echo "{{inputs.parameters.environment-label}}"
+          echo "codefresh.io/release 1"
+          echo "{{workflow.labels."codefresh\.io\/release"}}"
+          echo "codefresh.io/release 2"
+          echo "{{workflow.labels."codefresh\.io/release"}}"
+          echo "codefresh.io/release 3"
+          echo "{{workflow.labels.'codefresh\.io\/release'}}"
+          echo "codefresh.io/release 4"
+          echo "{{workflow.labels.'codefresh\.io/release'}}"
           
