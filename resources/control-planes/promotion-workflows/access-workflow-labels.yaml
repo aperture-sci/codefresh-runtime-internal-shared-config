@@ -12,6 +12,8 @@ metadata:
     version: 0.0.1
     codefresh.io/workflow-origin: promotion
     description: Workflow to access the values in the Workflow labels
+  labels:
+    environment: production
 spec:
   arguments:
     parameters:
