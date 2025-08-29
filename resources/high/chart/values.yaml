@@ -1,8 +1,4 @@
 gitops-runtime:
-  gitops-operator:
-    # env:
-      # to be removed when operator is updated to 0.22.0
-      # PROMOTION_WRAPPER_TEMPLATE: promotion-wrapper-old-workflows
   cf-argocd-extras:
     enabled: true
   argo-cd:
