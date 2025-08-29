@@ -35,12 +35,11 @@ spec:
           - sh
         source: |
           echo "APP_NAME: {{workflow.parameters.APP_NAME}}"
-          echo "'codefresh.io/app-name': {{workflow.labels.codefresh.io/app-name}}"
-          echo "'codefresh.io/app-namespace': {{workflow.labels.codefresh.io/app-namespace}}"
-          echo "'codefresh.io/env': {{workflow.labels.codefresh.io/env}}"
-          echo "'codefresh.io/product': {{workflow.labels.codefresh.io/product}}"
-          echo "'codefresh.io/promotion-flow': {{workflow.labels.codefresh.io/promotion-flow}}"
-          echo "'codefresh.io/promotion-stage': {{workflow.labels.codefresh.io/promotion-stage}}"
-          echo "'codefresh.io/release': {{workflow.labels.codefresh.io/release}}"
-          echo "'codefresh.io/release-name': {{workflow.labels.codefresh.io/release-name}}"
-          
+          # echo "'codefresh.io/app-name': {{workflow.labels.codefresh.io/app-name}}"
+          # echo "'codefresh.io/app-namespace': {{workflow.labels.codefresh.io/app-namespace}}"
+          # echo "'codefresh.io/env': {{workflow.labels.codefresh.io/env}}"
+          # echo "'codefresh.io/product': {{workflow.labels.codefresh.io/product}}"
+          # echo "'codefresh.io/promotion-flow': {{workflow.labels.codefresh.io/promotion-flow}}"
+          # echo "'codefresh.io/promotion-stage': {{workflow.labels.codefresh.io/promotion-stage}}"
+          # echo "'codefresh.io/release': {{workflow.labels.codefresh.io/release}}"
+          # echo "'codefresh.io/release-name': {{workflow.labels.codefresh.io/release-name}}"
