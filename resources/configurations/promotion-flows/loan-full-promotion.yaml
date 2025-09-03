@@ -7,7 +7,6 @@ metadata:
     description: Promotion flow for loan microservices. Dev to Prod US.
 spec:
   triggerEnvironment: dev
-  postTrigger: post-action
   steps:
     - environment: qa
       dependsOn:
