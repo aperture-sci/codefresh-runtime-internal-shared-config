@@ -4,6 +4,9 @@ gitops-runtime:
   argo-rollouts:
     enabled: false
   argo-cd:
+    configs:
+      params:
+        reposerver.parallelism.limit: 1
     acrController:
       enabled: true
     eventReporter:
