@@ -6,7 +6,14 @@ gitops-runtime:
   argo-cd:
     configs:
       params:
-        reposerver.parallelism.limit: 1
+        reposerver.parallelism.limit: 5
+      cm:
+        timeout.reconciliation: 120s
+        timeout.reconciliation.jitter: 60s
+    repoServer:
+      env:
+        - name: ARGOCD_EXEC_TIMEOUT
+          value: "5m"
     acrController:
       enabled: true
     eventReporter:
@@ -35,15 +42,6 @@ gitops-runtime:
       name: demo
   installer:
     skipValidation: true
-
-  argo-cd:
-    configs:
-      cm:
-        timeout.reconciliation: 2m
-    repoServer:
-      env:
-        - name: ARGOCD_EXEC_TIMEOUT
-          value: "5m"
 
   argo-workflows:
     controller:
