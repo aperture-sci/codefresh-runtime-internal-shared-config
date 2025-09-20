@@ -37,7 +37,29 @@ gitops-runtime:
     commitServer:
       metrics: *metric_block
     notifications:
+      enabled: true
+      logLevel: "debug"
+      cm:
+        create: true
+        name: argocd-notifications-cm
+      secret:
+        create: false
       metrics: *metric_block
+      notifiers:
+        service.grafana: |
+          apiURL: https://grafana-low.cs.sandbox.codefresh.io/api
+          apiKey: $grafana-api-key
+      triggers:
+        trigger.on-sync-succeeded: |
+          - description: Application syncing has succeeded
+            oncePer: app.status.operationState?.syncResult?.revision
+            when: app.status.operationState != nil and app.status.operationState.phase in ['Succeeded']
+            send:
+            - on-sync-succeeded
+      templates:
+        template.on-sync-succeeded: |
+          message: "{{.app.metadata.name}} synced"
+
     redis:
       metrics: *metric_block
     controller:
