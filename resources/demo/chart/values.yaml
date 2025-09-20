@@ -7,13 +7,11 @@ gitops-runtime:
     configs:
       params:
         reposerver.parallelism.limit: 5
+        applicationsetcontroller.enable.github.api.metrics: "true"
       cm:
         timeout.reconciliation: 120s
         timeout.reconciliation.jitter: 60s
-    repoServer:
-      env:
-        - name: ARGOCD_EXEC_TIMEOUT
-          value: "5m"
+        application.resourceTrackingMethod: "annotation+label"
     acrController:
       enabled: true
     eventReporter:
@@ -22,11 +20,33 @@ gitops-runtime:
           value: 'false'
       replicas: 4
     server:
+      metrics: &metric_block
+        enabled: true
+        serviceMonitor:
+          enabled: true
+          namespace: "monitoring"
+          additionalLabels:
+            release: prometheus-stack-low
       replicas: 2
       resources:
         requests:
           cpu: '0.3'
           memory: 400Mi
+    applicationSet:
+      metrics: *metric_block
+    commitServer:
+      metrics: *metric_block
+    notifications:
+      metrics: *metric_block
+    redis:
+      metrics: *metric_block
+    controller:
+      metrics: *metric_block
+    repoServer:
+      env:
+        - name: ARGOCD_EXEC_TIMEOUT
+          value: "5m"
+      metrics: *metric_block
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
