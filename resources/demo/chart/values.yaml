@@ -49,6 +49,9 @@ gitops-runtime:
         service.grafana: |
           apiURL: https://grafana-low.cs.sandbox.codefresh.io/api
           apiKey: $grafana-api-key
+        service.teams: |
+          recipientUrls:
+            channelName: $channel-teams-url
       triggers:
         trigger.on-sync-succeeded: |
           - description: Application syncing has succeeded
