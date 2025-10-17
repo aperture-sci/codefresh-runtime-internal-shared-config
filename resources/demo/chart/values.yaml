@@ -52,6 +52,8 @@ gitops-runtime:
         service.teams: |
           recipientUrls:
             channelName: $channel-teams-url
+        service.slack: |
+          token: $slack-token
       triggers:
         trigger.on-sync-succeeded: |
           - description: Application syncing has succeeded
