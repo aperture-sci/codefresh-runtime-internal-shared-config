@@ -23,6 +23,12 @@ spec:
           operator: In
           values:
             - '*pr-jira*'
+    - name: cf-101-flow
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - promote
   promotionTemplate:
     versionSource:
       file: Chart.yaml
