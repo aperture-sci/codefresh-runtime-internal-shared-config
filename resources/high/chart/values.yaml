@@ -1,17 +1,32 @@
 gitops-runtime:
-  cf-argocd-extras:
-    enabled: true
   argo-cd:
-    notifications:
+    acrController:
       enabled: true
-      logLevel: "debug"
+    apiVersionOverrides:
+      monitoring.coreos.com: v1
+    applicationSet:
+      metrics:
+        enabled: true
+    configs:
+      cm:
+        application.resourceTrackingMethod: annotation+label
+      params:
+        applicationsetcontroller.enable.github.api.metrics: 'true'
+    controller:
+      metrics:
+        enabled: true
+    eventReporter:
+      env:
+        - name: USE_GRPC
+          value: 'false'
+      replicas: 4
+    notifications:
       cm:
         create: true
         name: argocd-notifications-cm
-      secret:
-        create: false
+      enabled: true
+      logLevel: debug
       metrics:
-      # -- Enables prometheus metrics server
         enabled: true
       notifiers:
         service.grafana: |
@@ -19,6 +34,11 @@ gitops-runtime:
           apiKey: $grafana-api-key
         service.slack: |
           token: $slack-token
+      secret:
+        create: false
+      templates:
+        template.on-sync-succeeded: |
+          message: "{{.app.metadata.name}} synced"
       triggers:
         trigger.on-sync-succeeded: |
           - description: Application syncing has succeeded
@@ -26,44 +46,40 @@ gitops-runtime:
             when: app.status.operationState != nil and app.status.operationState.phase in ['Succeeded']
             send:
             - on-sync-succeeded
-      templates:
-        template.on-sync-succeeded: |
-          message: "{{.app.metadata.name}} synced"
-
-    apiVersionOverrides:
-      monitoring.coreos.com: v1
-    configs:
-      cm:
-        application.resourceTrackingMethod: "annotation+label"
-      params:
-        applicationsetcontroller.enable.github.api.metrics: "true"
-
-    server:
-      metrics:
-        enabled: true
-    applicationSet:
-      metrics:
-        enabled: true
-    controller:
-      metrics:
-        enabled: true
     repoServer:
       metrics:
         enabled: true
-
-    acrController:
-      enabled: true
-    eventReporter:
-      env:
-        - name: USE_GRPC
-          value: 'false'
-      replicas: 4
     server:
       replicas: 2
       resources:
         requests:
           cpu: '0.3'
           memory: 400Mi
+  argo-workflows:
+    artifactRepositoryRef:
+      codefresh-workflows-log-store:
+        archiveLogs: true
+        codefresh-workflows-log-store:
+          s3:
+            accessKeySecret:
+              key: token
+              name: codefresh-token
+            bucket: 641dfab29939b208915c0d4e
+            endpoint: gitops-workflow-logs.codefresh.io
+            insecure: false
+            keyFormat: high/{{workflow.name}}/{{pod.name}}
+            secretKeySecret:
+              key: token
+              name: codefresh-token
+    controller:
+      workflowDefaults:
+        spec:
+          archiveLogs: true
+          artifactRepositoryRef:
+            configMap: codefresh-workflows-log-store
+            key: codefresh-workflows-log-store
+  cf-argocd-extras:
+    enabled: true
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
@@ -78,28 +94,4 @@ gitops-runtime:
       isConfigurationRuntime: false
       name: high
   installer:
-    skipValidation: false
-
-  argo-workflows:
-    controller:
-      workflowDefaults:
-        spec:
-          archiveLogs: true
-          artifactRepositoryRef:
-            configMap: codefresh-workflows-log-store
-            key: codefresh-workflows-log-store
-    artifactRepositoryRef:
-      codefresh-workflows-log-store:
-        archiveLogs: true
-        codefresh-workflows-log-store:
-          s3:
-            bucket: 641dfab29939b208915c0d4e
-            endpoint: gitops-workflow-logs.codefresh.io
-            insecure: false
-            keyFormat: high/{{workflow.name}}/{{pod.name}}
-            accessKeySecret:
-              name: codefresh-token
-              key: token
-            secretKeySecret:
-              name: codefresh-token
-              key: token
+    skipValidation: true
