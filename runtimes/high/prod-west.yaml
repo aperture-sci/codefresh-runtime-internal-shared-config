@@ -11,7 +11,7 @@ spec:
   destination:
     namespace: default
     server: https://demo-prod-us-west-vcluster.cs-sandbox.cf-infra.com
-  project: default
+  project: cf-runtime-app-project
   source:
     directory:
       include: >-
