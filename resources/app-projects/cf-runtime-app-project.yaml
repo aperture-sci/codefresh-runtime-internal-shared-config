@@ -8,6 +8,8 @@ spec:
   destinations:
   - namespace: '*'
     server: https://kubernetes.default.svc
+  - namespace: '*'
+    name: prod-west
   sourceRepos:
   - https://github.com/aperture-sci/codefresh-runtime-internal-shared-config.git
   clusterResourceWhitelist:
