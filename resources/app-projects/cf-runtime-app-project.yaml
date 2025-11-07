@@ -10,6 +10,12 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: '*'
     name: prod-west
+  - namespace: '*'
+    name: prod-east
+  - namespace: '*'
+    name: prod-eu
+  - namespace: '*'
+    name: prod-asia    
   sourceRepos:
   - https://github.com/aperture-sci/codefresh-runtime-internal-shared-config.git
   clusterResourceWhitelist:
