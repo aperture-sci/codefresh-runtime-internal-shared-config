@@ -6,7 +6,7 @@ gitops-runtime:
   argo-cd:
     configs:
       params:
-        reposerver.parallelism.limit: 5
+        reposerver.parallelism.limit: 3
         applicationsetcontroller.enable.github.api.metrics: "true"
       cm:
         timeout.reconciliation: 120s

@@ -13,6 +13,7 @@ gitops-runtime:
       cm:
         application.resourceTrackingMethod: annotation+label
       params:
+        reposerver.parallelism.limit: 3
         applicationsetcontroller.enable.github.api.metrics: 'true'
     controller:
       metrics:
@@ -86,7 +87,7 @@ gitops-runtime:
             secretKeySecret:
               name: codefresh-token
               key: token
-              
+
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
