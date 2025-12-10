@@ -25,5 +25,5 @@ spec:
       - p, proj:cf-git-sources:my-space-a-sa, applicationsets, *, cf-git-sources/*, allow
       - p, proj:cf-git-sources:my-space-a-sa, logs, get, cf-git-sources/*, allow
       - p, proj:cf-git-sources:my-space-a-sa, exec, create, cf-git-sources/*, allow
-      - p, proj:cf-git-sources:my-space-a-sa, clusters, get, *, allow
-      - p, proj:cf-git-sources:my-space-a-sa, repositories, get, *, allow
+      - p, proj:cf-git-sources:my-space-a-sa, clusters, get, cf-git-sources/*, allow
+      - p, proj:cf-git-sources:my-space-a-sa, repositories, get, cf-git-sources/*, allow
