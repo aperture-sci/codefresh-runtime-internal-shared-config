@@ -17,3 +17,13 @@ spec:
       kind: PromotionFlow
     - group: codefresh.io
       kind: PromotionPolicy
+    roles:
+    - name: my-space-a-sa
+      description: Service account with full access to the cf-git-sources project
+      policies:
+      - p, proj:cf-git-sources:my-space-a-sa, applications, *, cf-git-sources/*, allow
+      - p, proj:cf-git-sources:my-space-a-sa, applicationsets, *, cf-git-sources/*, allow
+      - p, proj:cf-git-sources:my-space-a-sa, logs, get, cf-git-sources/*, allow
+      - p, proj:cf-git-sources:my-space-a-sa, exec, create, cf-git-sources/*, allow
+      - p, proj:cf-git-sources:my-space-a-sa, clusters, get, *, allow
+      - p, proj:cf-git-sources:my-space-a-sa, repositories, get, *, allow
