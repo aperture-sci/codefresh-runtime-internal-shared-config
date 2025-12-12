@@ -7,14 +7,14 @@ metadata:
 spec:
   triggerEnvironment: dev
   steps:
-    - environment: staging
+    - environment: qa
       dependsOn:
         - dev
       policy:
         action: commit
     - environment: prod-us
       dependsOn:
-        - staging
+        - qa
       policy:
         action: pr
         preAction: pre-action-argo-cd-jira-example

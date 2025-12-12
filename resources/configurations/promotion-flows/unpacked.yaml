@@ -7,12 +7,6 @@
 # spec:
 #   triggerEnvironment: dev
 #   steps:
-#     - environment: staging
-#       dependsOn:
-#         - dev
-#       policy:
-#         action: commit
-#         postAction: soak-test
 #     - environment: qa
 #       dependsOn:
 #         - dev
@@ -23,7 +17,6 @@
 #         onFail: slack-notification
 #     - environment: prod-us
 #       dependsOn:
-#         - staging
 #         - qa
 #       policy:
 #         action: pr
@@ -32,12 +25,12 @@
 #         onSuccess: service-now-move-to-implement
 #     - environment: prod-asia
 #       dependsOn:
-#         - staging
+#         - prod-us
 #       policy:
 #         action: commit
 #     - environment: prod-eu
 #       dependsOn:
-#         - staging
+#         - prod-us
 #       policy:
 #         action: pr
 #   hooks:

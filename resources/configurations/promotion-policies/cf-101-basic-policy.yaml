@@ -15,7 +15,6 @@ spec:
         - qa
         - pro-asia
         - prod-us
-        - staging
   policy:
     action: commit
     preAction: pre-action
