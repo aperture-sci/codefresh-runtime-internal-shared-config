@@ -13,13 +13,8 @@ spec:
       policy:
         action: commit
         postAction: smoketests
-    - environment: pro-asia
-      dependsOn:
-        - qa
-      policy:
-        action: commit
     - environment: prod-us
       dependsOn:
-        - pro-asia
+        - qa
       policy:
         action: pr

@@ -22,16 +22,9 @@ spec:
         preAction: pre-action
         postAction: post-action
         action: commit
-    - environment: prod-asia
-      dependsOn:
-        - prod-eu
-      policy:
-        preAction: pre-action
-        postAction: post-action
-        action: commit
     - environment: prod-us
       dependsOn:
-        - prod-asia
+        - prod-eu
       policy:
         preAction: pre-action
         postAction: post-action

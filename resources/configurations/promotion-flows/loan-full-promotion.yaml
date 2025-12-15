@@ -22,17 +22,9 @@ spec:
         action: commit
         preAction: pre-action
         postAction: post-action
-    - environment: prod-asia
-      dependsOn:
-        - qa
-      policy:
-        action: commit
-        preAction: pre-action
-        postAction: post-action
     - environment: prod-us
       dependsOn:
         - prod-eu
-        - prod-asia
       policy:
         action: commit
   promotionTimeoutLimit: 180

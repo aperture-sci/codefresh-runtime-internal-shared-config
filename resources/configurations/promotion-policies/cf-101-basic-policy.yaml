@@ -13,7 +13,6 @@ spec:
         - dev
         - production
         - qa
-        - pro-asia
         - prod-us
   policy:
     action: commit

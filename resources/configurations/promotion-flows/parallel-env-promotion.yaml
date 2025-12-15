@@ -14,23 +14,10 @@ spec:
         action: commit
         preAction: pre-action
         postAction: post-action
-    - environment: pro-asia
-      dependsOn:
-        - qa
-      policy:
-        preAction: smoketests
-        action: commit
-        postAction: post-action
     - environment: prod-us
       dependsOn:
         - qa
       policy:
         preAction: smoketests
         action: commit
-        postAction: post-action
-    - environment: prod-us
-      dependsOn:
-        - qa
-      policy:
-        preAction: pre-action
         postAction: post-action
