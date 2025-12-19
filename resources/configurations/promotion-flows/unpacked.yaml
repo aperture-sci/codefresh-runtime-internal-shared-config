@@ -23,11 +23,6 @@
 #       hooks:
 #         onStart: slack-notification
 #         onSuccess: service-now-move-to-implement
-#     - environment: prod-eu
-#       dependsOn:
-#         - prod-us
-#       policy:
-#         action: pr
 #   hooks:
 #     onStart: service-now-open-standard-hook
 #     onSuccess: slack-notification

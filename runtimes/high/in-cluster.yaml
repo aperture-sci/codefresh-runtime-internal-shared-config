@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,docker-intg/integration.config.yaml,docker-intg/integration.secret.yaml,high/*.yaml,high/default-git-source.yaml,high/high.yaml,high/prod-east-rollout-reporter.yaml,high/prod-east-rollouts.yaml,high/prod-eu-rollout-reporter.yaml,high/prod-eu-rollouts.yaml,high/prod-west-rollout-reporter.yaml,high/prod-west-rollouts.yaml,runtimes/high/**/*.yaml,runtimes/high/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,docker-intg/integration.config.yaml,docker-intg/integration.secret.yaml,high/*.yaml,high/default-git-source.yaml,high/high.yaml,high/prod-east-rollout-reporter.yaml,high/prod-east-rollouts.yaml,high/prod-west-rollout-reporter.yaml,high/prod-west-rollouts.yaml,runtimes/high/**/*.yaml,runtimes/high/*.yaml}
       recurse: true
     path: resources
     repoURL: >-

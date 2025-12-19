@@ -15,16 +15,9 @@ spec:
         preAction: pre-action
         action: commit
         postAction: smoketests
-    - environment: prod-eu
-      dependsOn:
-        - qa
-      policy:
-        preAction: pre-action
-        postAction: post-action
-        action: commit
     - environment: prod-us
       dependsOn:
-        - prod-eu
+        - qa
       policy:
         preAction: pre-action
         postAction: post-action

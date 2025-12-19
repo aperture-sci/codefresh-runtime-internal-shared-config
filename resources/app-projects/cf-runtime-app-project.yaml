@@ -12,8 +12,6 @@ spec:
     name: prod-west
   - namespace: '*'
     name: prod-east
-  - namespace: '*'
-    name: prod-eu
   sourceRepos:
   - https://github.com/aperture-sci/codefresh-runtime-internal-shared-config.git
   clusterResourceWhitelist:

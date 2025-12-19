@@ -15,16 +15,9 @@ spec:
         preAction: pre-action
         postAction: smoketests
         action: commit
-    - environment: prod-eu
-      dependsOn:
-        - qa
-      policy:
-        action: commit
-        preAction: pre-action
-        postAction: post-action
     - environment: prod-us
       dependsOn:
-        - prod-eu
+        - qa
       policy:
         action: commit
   promotionTimeoutLimit: 180
