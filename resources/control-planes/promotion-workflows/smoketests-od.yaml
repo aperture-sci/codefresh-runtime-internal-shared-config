@@ -12,11 +12,11 @@ spec:
   arguments:
     parameters:
     - name: THRESHOLD
-      default: 80
+      value: 80
     - name: NB_TESTS
-      default: 100
+      value: 100
     - name: TEST_RATE
-      default: 50
+      value: 50
   entrypoint: smoke
   templates:
     - name: smoke
