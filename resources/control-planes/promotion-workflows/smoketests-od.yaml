@@ -23,11 +23,11 @@ spec:
       inputs:
         parameters:
           - name: NB_TESTS
-            value: {{ workflow.parameters.NB_TESTS}}
+            value: "{{ workflow.parameters.NB_TESTS}}"
           - name: THRESHOLD
-            value: {{ workflow.parameters.THRESHOLD}}
+            value: "{{ workflow.parameters.THRESHOLD}}"
           - name: TEST_RATE
-            value: {{ workflow.parameters.TEST_RATE}}
+            value: "{{ workflow.parameters.TEST_RATE}}"
       script:
         image: bash:5.2.26
         command: ["/usr/local/bin/bash"]
