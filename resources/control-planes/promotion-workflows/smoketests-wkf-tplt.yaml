@@ -42,7 +42,7 @@ spec:
           - name: NB_TESTS
             value: 100
           - name: THRESHOLD
-            value: 30
+            value: 80
           - name: TEST_RATE
             value: 50
       script:
