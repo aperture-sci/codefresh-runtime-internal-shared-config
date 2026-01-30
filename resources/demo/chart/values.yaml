@@ -1,8 +1,8 @@
 gitops-runtime:
   cf-argocd-extras:
     enabled: true
-  argo-rollouts:
-    enabled: false
+  # argo-rollouts:
+  #   enabled: false
   argo-cd:
     configs:
       params:

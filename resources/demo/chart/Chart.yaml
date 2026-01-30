@@ -1,13 +1,12 @@
 apiVersion: v2
-appVersion: 0.2.0
+appVersion: 0.2.1
 description: Codefresh gitops runtime umbrella chart
 name: codefresh-gitops-runtime
-version: 0.26.6
+version: 0.27.1
 dependencies:
   - name: gitops-runtime
     repository: oci://quay.io/codefresh   # /dev
-    version: 0.26.6
-
-  # - name: argo-rollouts
-  #   repository: https://codefresh-io.github.io/argo-helm
-  #   version: 2.37.3-6-v1.7.2-cap-CR-29629
+    version: 0.27.1
+  - name: argo-rollouts
+    repository: https://argoproj.github.io/argo-helm
+    version: 2.40.5
