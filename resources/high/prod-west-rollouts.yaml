@@ -11,8 +11,10 @@ spec:
   project: default
   source:
     chart: argo-rollouts
-    repoURL: https://codefresh-io.github.io/argo-helm
-    targetRevision: 2.37.3-7-v1.7.2-cap-OSS-697
+    # repoURL: https://codefresh-io.github.io/argo-helm
+    # targetRevision: 2.37.3-7-v1.7.2-cap-OSS-697
+    repoURL: https://argoproj.github.io/argo-helm
+    targetRevision: 2.40.5
     helm:
       releaseName: argo-rollouts
   destination:
