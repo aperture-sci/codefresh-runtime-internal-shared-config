@@ -32,16 +32,16 @@ spec:
         image: bash:5.2.26
         command: ["/usr/local/bin/bash"]
         source: |
-          echo "Running Smoking Tests"
-          echo "Number of Tests: $NB_TESTS"
-          echo "Threshold: $THRESHOLD"
-          echo "Individual test rate: $TEST_RATE"
-          
           num_tests={{inputs.parameters.NB_TESTS}}
           error=0
           success=0
           test_rate={{inputs.parameters.TEST_RATE}}
           suite_threshold={{inputs.parameters.THRESHOLD}}
+
+          echo "Running Smoking Tests"
+          echo "Number of Tests: $num_tests"
+          echo "Suite threshold: $suite_threshold"
+          echo "Individual test rate: $test_rate"
 
           # Generate random questions and answers
           for ((i=1; i<=$num_tests; i++)); do
