@@ -32,6 +32,11 @@ spec:
         image: bash:5.2.26
         command: ["/usr/local/bin/bash"]
         source: |
+          echo "Running Smoking Tests"
+          echo "Number of Tests: $NB_TESTS"
+          echo "Threshold: $THRESHOLD"
+          echo "Individual test rate: $TEST_RATE"
+          
           num_tests={{inputs.parameters.NB_TESTS}}
           error=0
           success=0
