@@ -65,8 +65,8 @@ gitops-runtime:
         template.on-sync-succeeded: |
           message: "{{.app.metadata.name}} synced"
 
-    redis:
-      metrics: *metric_block
+    # redis:
+    #   metrics: *metric_block
     controller:
       metrics: *metric_block
     repoServer:
