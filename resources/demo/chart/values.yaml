@@ -4,6 +4,10 @@ gitops-runtime:
   # argo-rollouts:
   #   enabled: false
   argo-cd:
+    acrController:
+      enabled: true
+    apiVersionOverrides:
+      monitoring.coreos.com: v1
     configs:
       params:
         reposerver.parallelism.limit: 3
@@ -12,8 +16,7 @@ gitops-runtime:
         timeout.reconciliation: 120s
         timeout.reconciliation.jitter: 60s
         application.resourceTrackingMethod: "annotation+label"
-    acrController:
-      enabled: true
+
     eventReporter:
       env:
         - name: USE_GRPC
