@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: prod-east-rollouts
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true
   labels:
     codefresh.io/entity: component
     codefresh.io/internal: "false"
@@ -21,6 +23,8 @@ spec:
     namespace: default
     server: https://demo-prod-us-east-vcluster.cs-sandbox.cf-infra.com
   syncPolicy:
+    syncOptions:
+      - ServerSideApply=true
     automated:
       allowEmpty: true
       prune: true
