@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: demo-dev-rollouts
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true
   labels:
     codefresh.io/entity: component
     codefresh.io/internal: "false"
@@ -21,6 +23,8 @@ spec:
     namespace: default
     server: https://demo-dev-vcluster.cs-sandbox.cf-infra.com
   syncPolicy:
+    syncOptions:
+      - ServerSideApply=true
     automated:
       allowEmpty: true
       prune: true
