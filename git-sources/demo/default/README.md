@@ -9,7 +9,7 @@ Git Sources are how The Codefresh GitOps Platform syncs Kubernetes Resource Defi
   - Argo CD Applications
   - Argo CD Projects
   - Argo CD Application Sets
-- Pipelines
+  - Pipelines
   - Workflow Templates
   - Cluster Templates
   - Sensors
