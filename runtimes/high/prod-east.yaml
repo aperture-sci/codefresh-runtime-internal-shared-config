@@ -10,7 +10,7 @@ metadata:
 spec:
   destination:
     namespace: default
-    server: https://demo-prod-us-east-vcluster.cs-sandbox.cf-infra.com
+    server: https://demo-prod-us-east-vcluster.rnd-sandbox.cf-infra.com
   project: cf-runtime-app-project
   source:
     directory:

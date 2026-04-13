@@ -10,7 +10,7 @@ metadata:
 spec:
   destination:
     namespace: default
-    server: https://demo-staging-vcluster.cs-sandbox.cf-infra.com
+    server: https://demo-staging-vcluster.rnd-sandbox.cf-infra.com
   project: default
   source:
     directory:

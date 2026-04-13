@@ -21,7 +21,7 @@ spec:
       releaseName: argo-rollouts
   destination:
     namespace: default
-    server: https://demo-qa-vcluster.cs-sandbox.cf-infra.com
+    server: https://demo-qa-vcluster.rnd-sandbox.cf-infra.com
   syncPolicy:
     syncOptions:
       - ServerSideApply=true
