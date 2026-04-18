@@ -29,3 +29,5 @@ spec:
     kind: PromotionPolicy
   - group: codefresh.io
     kind: PromotionFlow
+  - group: ""
+    kind: Namespace
