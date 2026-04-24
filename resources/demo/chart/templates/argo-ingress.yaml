@@ -3,13 +3,9 @@ kind: Ingress
 metadata:
   name: argocd-server
   namespace: demo
-  labels: {}
-  annotations:
-    ingress.kubernetes.io/proxy-body-size: 100M
-    ingress.kubernetes.io/app-root: /
 
 spec:
-  ingressClassName: nginx-public
+  ingressClassName: haproxy-ingress-public
   rules:
     - host: argocd-tam-demo.rnd.sandbox.codefresh.io
       http:
