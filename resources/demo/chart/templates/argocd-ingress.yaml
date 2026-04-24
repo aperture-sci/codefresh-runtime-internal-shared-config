@@ -3,7 +3,10 @@ kind: Ingress
 metadata:
   name: argocd-server-ingress
   namespace: demo
-  
+  annotations:
+    ingress.kubernetes.io/ssl-passthrough: "false"
+    ingress.kubernetes.io/ssl-redirect: "true"
+    ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   ingressClassName: haproxy-ingress-public
   rules:
@@ -16,4 +19,4 @@ spec:
               service:
                 name: argo-cd-server
                 port:
-                  number: 443
+                  number: 80
