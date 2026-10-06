@@ -13,29 +13,29 @@ gitops-runtime:
         requests:
           cpu: '0.3'
           memory: 400Mi
-  argo-workflows:
-    artifactRepositoryRef:
-      codefresh-workflows-log-store:
-        archiveLogs: true
-        codefresh-workflows-log-store:
-          s3:
-            accessKeySecret:
-              key: token
-              name: codefresh-token
-            bucket: 641dfab29939b208915c0d4e
-            endpoint: gitops-workflow-logs.codefresh.io
-            insecure: false
-            keyFormat: csdp/{{workflow.name}}/{{pod.name}}
-            secretKeySecret:
-              key: token
-              name: codefresh-token
-    controller:
-      workflowDefaults:
-        spec:
-          archiveLogs: true
-          artifactRepositoryRef:
-            configMap: codefresh-workflows-log-store
-            key: codefresh-workflows-log-store
+  # argo-workflows:
+  #   artifactRepositoryRef:
+  #     codefresh-workflows-log-store:
+  #       archiveLogs: true
+  #       codefresh-workflows-log-store:
+  #         s3:
+  #           accessKeySecret:
+  #             key: token
+  #             name: codefresh-token
+  #           bucket: 641dfab29939b208915c0d4e
+  #           endpoint: gitops-workflow-logs.codefresh.io
+  #           insecure: false
+  #           keyFormat: csdp/{{workflow.name}}/{{pod.name}}
+  #           secretKeySecret:
+  #             key: token
+  #             name: codefresh-token
+    # controller:
+    #   workflowDefaults:
+    #     spec:
+    #       archiveLogs: true
+    #       artifactRepositoryRef:
+    #         configMap: codefresh-workflows-log-store
+    #         key: codefresh-workflows-log-store
   global:
     codefresh:
       accountId: 641dfab29939b208915c0d4e
