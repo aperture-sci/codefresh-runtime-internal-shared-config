@@ -1,9 +1,9 @@
 apiVersion: v2
-appVersion: 0.2.3
+appVersion: 0.1.72
 description: Codefresh gitops runtime umbrella chart
 name: codefresh-gitops-runtime
-version: 0.29.20
+version: 0.31.3
 dependencies:
   - name: gitops-runtime
     repository: oci://quay.io/codefresh
-    version: 0.29.20
+    version: 0.31.3
