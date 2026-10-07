@@ -4,8 +4,11 @@ metadata:
   name: demo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+    - pre-delete-finalizer.argocd.argoproj.io
+    - pre-delete-finalizer.argocd.argoproj.io/cleanup
+
   annotations:
-    argocd.argoproj.io/compare-options: ServerSideDiff=true 
+    argocd.argoproj.io/compare-options: ServerSideDiff=true
   labels:
     codefresh.io/entity: runtime
     codefresh.io/internal: 'true'
