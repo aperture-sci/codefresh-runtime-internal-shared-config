@@ -1,5 +1,8 @@
 gitops-runtime:
   argo-cd:
+    configs:
+      params:
+        application.namespaces: '*'
     acrController:
       enabled: true
     eventReporter:
